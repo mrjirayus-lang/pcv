@@ -1,0 +1,1432 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#E9F5FF">
+<title>วัคซีน IPD ลูกต้องฉีดกี่เข็ม? | คลินิกเด็กหมอจิรายุส เวียงสระ</title>
+<meta name="description" content="กรอกอายุลูก รู้จำนวนเข็มและวันนัดโดยประมาณ เทียบวัคซีนฟรี IPD10 กับวัคซีนทางเลือก PCV13 / PCV20 โดยคลินิกเด็กหมอจิรายุส เวียงสระ">
+<link rel="canonical" href="https://mrjirayus-lang.github.io/pcv/">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="คลินิกเด็กหมอจิรายุส เวียงสระ">
+<meta property="og:locale" content="th_TH">
+<meta property="og:title" content="วัคซีนปอดอักเสบ IPD ลูกต้องฉีดกี่เข็ม?">
+<meta property="og:description" content="กรอกอายุลูก รู้จำนวนเข็มและวันนัดโดยประมาณ เทียบวัคซีนฟรี IPD10 กับวัคซีนทางเลือก">
+<meta property="og:url" content="https://mrjirayus-lang.github.io/pcv/">
+<meta property="og:image" content="https://mrjirayus-lang.github.io/pcv/og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="วัคซีนปอดอักเสบ IPD ลูกต้องฉีดกี่เข็ม? ตัวคำนวณจำนวนเข็มจากคลินิกเด็กหมอจิรายุส">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png">
+<link rel="icon" type="image/png" sizes="48x48" href="favicon-48.png">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<link rel="manifest" href="site.webmanifest">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "MedicalClinic", "name": "คลินิกเด็กหมอจิรายุส เวียงสระ", "url": "https://mrjirayus-lang.github.io/pcv/", "logo": "https://mrjirayus-lang.github.io/pcv/icon-512.png", "image": "https://mrjirayus-lang.github.io/pcv/og.png", "telephone": "+66625691900", "medicalSpecialty": "Pediatric", "address": {"@type": "PostalAddress", "streetAddress": "ข้างธนาคารกสิกรไทย", "addressLocality": "เวียงสระ", "addressCountry": "TH"}, "openingHoursSpecification": [{"@type": "OpeningHoursSpecification", "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"], "opens": "17:00", "closes": "20:00"}, {"@type": "OpeningHoursSpecification", "dayOfWeek": "Saturday", "opens": "09:00", "closes": "12:00"}, {"@type": "OpeningHoursSpecification", "dayOfWeek": "Sunday", "opens": "09:00", "closes": "16:00"}], "sameAs": ["https://line.me/R/ti/p/@jirayusclinic"]}</script>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Thai+Looped:wght@400;500;600;700&family=Itim&family=Mitr:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  /* Pastel clinic-infographic world: sky page, white rounded cards, navy ink, hot-pink accent, yellow marker. One column on phones, two where it helps. */
+  --sky:#E9F5FF; --card:#FFFFFF; --ink:#1B2A5E; --ink2:#4E5C8A; --line:#DCE7F4; --grid:#E6EEF8;
+  --pink:#E8336D; --yellow:#FFCF3F; --yellow-soft:#FFF4CC; --mint:#21A866;
+  --bkk:#1B2A5E; --nat:#8FD0F5;
+  --f-display:'Mitr','Noto Sans Thai','Leelawadee UI',Tahoma,sans-serif;
+  --f-body:'IBM Plex Sans Thai Looped','Noto Sans Thai Looped','Noto Sans Thai','Leelawadee UI',Tahoma,sans-serif;
+  --f-hand:'Itim','Mitr',cursive;
+  --r-lg:24px; --r-md:16px;
+  --shadow:0 4px 0 rgba(27,42,94,.05),0 10px 26px rgba(27,42,94,.08);
+  color-scheme:light;
+}
+[data-c=pink]{--gs:#EC4F86;--gb:#FFE4EE;--gi:#B01B52}
+[data-c=orange]{--gs:#F58A1F;--gb:#FFECD6;--gi:#9A4C00}
+[data-c=green]{--gs:#2DB36F;--gb:#DCF5E6;--gi:#136B3D}
+[data-c=blue]{--gs:#339BE6;--gb:#DDEFFF;--gi:#135F9E}
+[data-c=purple]{--gs:#9061E0;--gb:#EEE5FF;--gi:#5E35A8}
+
+*,*::before,*::after{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%;text-size-adjust:100%}
+body{margin:0;background:var(--sky);color:var(--ink);font:400 16px/1.65 var(--f-body);overflow-x:hidden;-webkit-tap-highlight-color:transparent}
+img,svg{max-width:100%;display:block}
+button{font:inherit;color:inherit}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--pink);outline-offset:2px;border-radius:10px}
+h1,h2,h3{font-family:var(--f-display);font-weight:600;line-height:1.35;margin:0;text-wrap:balance}
+p{margin:0}
+.nw{white-space:nowrap}
+.vh{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+
+/* ---------- sky ---------- */
+.sky{position:fixed;inset:0;overflow:hidden;pointer-events:none;z-index:0}
+.sky::before{content:"";position:absolute;inset:0;background:radial-gradient(120% 55% at 50% -8%,#fff 0%,rgba(255,255,255,0) 62%),linear-gradient(180deg,#DCEFFF 0%,var(--sky) 45%,#F2F8FF 100%)}
+.cloud{position:absolute;left:var(--x);top:var(--y);width:var(--w);animation:drift var(--d) ease-in-out infinite alternate;animation-delay:var(--dl)}
+@keyframes drift{from{transform:translateX(-7vw)}to{transform:translateX(9vw)}}
+.bgh{position:absolute;bottom:-30px;left:var(--x);width:var(--s);color:var(--c);opacity:0;animation:hrise var(--d) linear infinite;animation-delay:var(--dl)}
+.bgh svg{fill:currentColor}
+@keyframes hrise{0%{transform:translateY(0) rotate(-10deg);opacity:0}12%{opacity:.45}80%{opacity:.3}100%{transform:translateY(-105vh) rotate(12deg);opacity:0}}
+.fx{position:fixed;inset:0;pointer-events:none;z-index:90;overflow:hidden}
+.pt{position:absolute;pointer-events:none}
+.pt svg{width:100%;height:100%;fill:currentColor}
+
+.page{position:relative;z-index:1}
+.wrap{width:100%;max-width:980px;margin:0 auto;padding:0 16px}
+.sec{padding:34px 0 6px;scroll-margin-top:66px}
+.sec-head{display:grid;gap:6px;margin-bottom:16px}
+.eyebrow{font:500 14px/1.5 var(--f-display);color:var(--pink);display:inline-flex;align-items:center;gap:8px}
+.eyebrow::before{content:"";width:10px;height:10px;border-radius:50%;background:var(--yellow);box-shadow:0 0 0 3px #fff}
+h2{font-size:clamp(25px,6.6vw,34px)}
+.sec-lead{color:var(--ink2);font-size:15px;max-width:62ch}
+.card{background:var(--card);border-radius:var(--r-lg);box-shadow:var(--shadow);padding:18px}
+
+/* ---------- top bar ---------- */
+.topbar{position:sticky;top:0;z-index:40;background:rgba(255,255,255,.88);-webkit-backdrop-filter:saturate(1.4) blur(10px);backdrop-filter:saturate(1.4) blur(10px);border-bottom:1px solid rgba(27,42,94,.08)}
+.topbar-in{max-width:980px;margin:0 auto;display:flex;align-items:center;gap:8px;padding:7px 0 7px 12px}
+.top-logo{width:38px;height:38px;border-radius:50%;flex:none;box-shadow:0 0 0 2px #fff,0 2px 6px rgba(27,42,94,.18);cursor:pointer;border:0;padding:0;background:none}
+.top-logo img{width:100%;height:100%;border-radius:50%}
+.chips{position:relative;display:flex;gap:6px;overflow-x:auto;scrollbar-width:none;padding:3px 24px 3px 2px;min-width:0;-webkit-mask-image:linear-gradient(90deg,#000 86%,transparent);mask-image:linear-gradient(90deg,#000 86%,transparent)}
+.chips::-webkit-scrollbar{display:none}
+.chip{flex:none;font:500 14px/1.55 var(--f-display);padding:5px 13px;border-radius:99px;background:#fff;border:1.5px solid var(--line);text-decoration:none;color:var(--ink);white-space:nowrap;transition:background .25s,color .25s,border-color .25s}
+.chip.on{background:var(--ink);color:#fff;border-color:var(--ink)}
+
+/* ---------- hero ---------- */
+.hero{padding:20px 0 6px;display:grid;gap:14px}
+.hero-tags{display:flex;align-items:center;gap:8px;flex-wrap:wrap}
+.clinic-chip{display:inline-flex;align-items:center;gap:8px;background:#fff;border-radius:99px;padding:4px 14px 4px 4px;font:500 14px/1.45 var(--f-display);box-shadow:var(--shadow)}
+.clinic-chip img{width:32px;height:32px;border-radius:50%}
+.open-pill{display:inline-flex;align-items:center;gap:7px;font:500 13px/1.5 var(--f-display);padding:4px 11px;border-radius:99px;background:#DFF6E8;color:#136B3D}
+.open-pill::before{content:"";width:8px;height:8px;border-radius:50%;background:currentColor;flex:none;animation:blink 1.6s ease-in-out infinite}
+.open-pill.closed{background:#FFE6EC;color:#B01B52}
+.open-pill.closed::before{animation:none}
+@keyframes blink{50%{opacity:.25}}
+h1{font-size:clamp(33px,9.4vw,58px);line-height:1.32;letter-spacing:-.005em}
+.h1a,.h1b{display:block}
+.h1a em{font-style:normal;color:var(--pink)}
+.hl{position:relative;display:inline-block;z-index:0;padding:0 .08em}
+.hl svg{position:absolute;left:-3%;width:106%;bottom:.04em;height:.46em;z-index:-1;overflow:visible}
+.hl path{fill:none;stroke:var(--yellow);stroke-width:15px;stroke-linecap:round;stroke-linejoin:round;vector-effect:non-scaling-stroke;stroke-dasharray:1}
+.play .hl path{animation:draw 1.1s cubic-bezier(.6,.1,.3,1) .25s backwards}
+@keyframes draw{from{stroke-dashoffset:1}to{stroke-dashoffset:0}}
+.lead{font-size:16px;color:var(--ink2);max-width:52ch}
+.arena{position:relative;height:310px;margin-top:2px}
+.kid{position:absolute;left:50%;top:50%;width:184px;height:184px;margin:-92px 0 0 -92px;border-radius:50%;border:6px solid #fff;box-shadow:var(--shadow),0 0 0 4px rgba(232,51,109,.16);overflow:hidden;background:#FFF1C7}
+.kid svg{width:100%;height:100%}
+.kid.jig{animation:jig .45s}
+@keyframes jig{30%{transform:scale(1.06) rotate(-3deg)}60%{transform:scale(.98) rotate(2deg)}}
+.germ{position:absolute;left:var(--x);top:var(--y);width:58px;height:58px;margin:-29px 0 0 -29px;border:0;background:none;padding:0;cursor:pointer;z-index:2;animation:bob var(--bd,3s) ease-in-out infinite alternate;animation-delay:var(--bdl,0s);transition:opacity .3s}
+.germ svg{width:58px;height:58px;filter:drop-shadow(0 3px 0 rgba(27,42,94,.16))}
+.germ .tag{position:absolute;left:50%;bottom:-9px;transform:translateX(-50%);background:var(--ink);color:#fff;font:600 12px/1.45 var(--f-display);padding:0 8px;border-radius:99px;white-space:nowrap;border:2px solid #fff}
+@keyframes bob{from{transform:translateY(-6px) rotate(-7deg)}to{transform:translateY(6px) rotate(7deg)}}
+.germ.popped{opacity:0;pointer-events:none;animation:popout .3s ease-in forwards}
+@keyframes popout{0%{transform:scale(1)}40%{transform:scale(1.35)}100%{transform:scale(.1)}}
+.praise{position:absolute;left:50%;top:-4px;z-index:4;max-width:92%;width:max-content;text-align:center;transform:translateX(-50%) scale(.6);opacity:0;background:#fff;border:2.5px solid var(--ink);border-radius:16px;padding:6px 14px;font:400 18px/1.45 var(--f-hand);box-shadow:0 4px 0 var(--ink);transition:opacity .3s,transform .4s cubic-bezier(.3,1.6,.5,1);pointer-events:none}
+.praise.show{opacity:1;transform:translateX(-50%) scale(1)}
+.score{display:flex;justify-content:center;align-items:center;flex-wrap:wrap;gap:4px 8px;font:500 15px/1.5 var(--f-display);text-align:center}
+.score b{display:inline-grid;place-items:center;min-width:36px;height:36px;padding:0 9px;border-radius:99px;background:var(--yellow);font-size:19px;box-shadow:0 3px 0 rgba(27,42,94,.15)}
+.score small{flex-basis:100%;font:400 13px/1.5 var(--f-body);color:var(--ink2)}
+.bump{animation:bump .4s cubic-bezier(.3,1.6,.5,1)}
+@keyframes bump{40%{transform:scale(1.3)}}
+.trial{display:flex;gap:10px;align-items:flex-start;background:#FFF7D6;border:2px dashed #E9AE00;border-radius:16px;padding:10px 14px;font-size:14.5px;line-height:1.6}
+.trial b{font-family:var(--f-display);font-weight:600}
+.trial svg{width:22px;height:22px;flex:none;margin-top:2px}
+.slogan-hand{font:400 20px/1.5 var(--f-hand);color:var(--pink)}
+.cta{justify-self:start;display:inline-flex;align-items:center;gap:10px;background:var(--pink);color:#fff;text-decoration:none;font:600 17px/1.4 var(--f-display);padding:12px 20px;border-radius:99px;box-shadow:0 4px 0 #A3173F}
+.cta svg{width:18px;height:18px;animation:nudge 1.4s ease-in-out infinite}
+@keyframes nudge{50%{transform:translateY(4px)}}
+@media (min-width:860px){
+  .hero{grid-template-columns:1.05fr 1fr;column-gap:32px;align-items:center}
+  .hero > *{grid-column:1}
+  .hero .arena-box{grid-column:2;grid-row:1 / span 6}
+  .arena{height:380px}
+  .kid{width:220px;height:220px;margin:-110px 0 0 -110px}
+}
+
+/* ---------- calculator ---------- */
+.calc-card{border-top:7px solid var(--pink);display:grid;gap:4px}
+.lbl{font:500 15px/1.5 var(--f-display);display:block}
+.age-row{display:flex;align-items:center;justify-content:space-between;gap:6px 10px;flex-wrap:wrap;margin:2px 0 6px}
+.age-big{font:600 30px/1.35 var(--f-display)}
+.gpill{display:inline-flex;align-items:center;gap:6px;padding:3px 12px;border-radius:99px;font:500 14px/1.5 var(--f-display);background:var(--gb);color:var(--gi);white-space:nowrap}
+.gpill::before{content:"";width:9px;height:9px;border-radius:50%;background:var(--gs);flex:none}
+.rpill{display:inline-flex;align-items:center;gap:6px;padding:3px 12px;border-radius:99px;font:500 14px/1.5 var(--f-display);background:#EEE5FF;color:#5E35A8}
+.xpill{display:inline-flex;padding:3px 12px;border-radius:99px;font:500 14px/1.5 var(--f-display);background:#FFF4CC;color:#7A5A00}
+.slider-row{display:grid;grid-template-columns:44px 1fr 44px;gap:10px;align-items:center}
+.step{width:44px;height:44px;border-radius:50%;border:2.5px solid var(--ink);background:#fff;font:600 24px/1 var(--f-display);cursor:pointer;display:grid;place-items:center;box-shadow:0 3px 0 var(--ink);padding:0}
+.step:active{transform:translateY(2px);box-shadow:0 1px 0 var(--ink)}
+input[type=range]{-webkit-appearance:none;appearance:none;width:100%;height:38px;background:transparent;margin:0;cursor:pointer;--track:linear-gradient(90deg,#F6C3D6 0 2.78%,#EC4F86 2.78% 9.03%,#F58A1F 9.03% 15.97%,#2DB36F 15.97% 32.64%,#339BE6 32.64% 100%)}
+input[type=range].risk{--track:linear-gradient(90deg,#F6C3D6 0 2.78%,#EC4F86 2.78% 9.03%,#F58A1F 9.03% 15.97%,#2DB36F 15.97% 32.64%,#9061E0 32.64% 100%)}
+input[type=range]::-webkit-slider-runnable-track{height:12px;border-radius:99px;background:var(--track)}
+input[type=range]::-moz-range-track{height:12px;border-radius:99px;background:var(--track)}
+input[type=range]::-webkit-slider-thumb{-webkit-appearance:none;width:30px;height:30px;margin-top:-9px;border-radius:50%;background:#fff;border:4px solid var(--ink);box-shadow:0 3px 0 rgba(27,42,94,.25)}
+input[type=range]::-moz-range-thumb{width:22px;height:22px;border-radius:50%;background:#fff;border:4px solid var(--ink)}
+.ticks{position:relative;height:20px;margin:0 54px;font:400 11.5px/1.6 var(--f-display);color:var(--ink2)}
+.ticks span{position:absolute;top:0;transform:translateX(-50%);left:calc(15px + (100% - 30px) * var(--p));white-space:nowrap}
+.selects{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:10px}
+.sel{display:grid;gap:3px;font-size:13px;color:var(--ink2)}
+.sel select{-webkit-appearance:none;appearance:none;font:500 16px/1.45 var(--f-display);color:var(--ink);padding:9px 34px 9px 12px;border:2px solid var(--line);border-radius:12px;background:#fff url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Cpath d='M3 6l5 5 5-5' fill='none' stroke='%231B2A5E' stroke-width='2.4' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E") no-repeat right 10px center/14px;width:100%}
+.quick{display:flex;flex-wrap:wrap;gap:7px;margin-top:12px}
+.q{border:2px solid var(--line);background:#fff;border-radius:99px;padding:4px 12px;font:500 14px/1.55 var(--f-display);cursor:pointer;transition:background .2s,color .2s,border-color .2s}
+.q.on{background:var(--ink);border-color:var(--ink);color:#fff}
+.divider{height:0;border-top:2px dashed var(--line);margin:16px 0 12px}
+.seg{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:6px}
+.seg button{border:2.5px solid var(--line);background:#fff;border-radius:14px;padding:9px;font:500 16px/1.45 var(--f-display);cursor:pointer;display:flex;align-items:center;justify-content:center;gap:8px}
+.seg button[aria-checked=true][data-risk="0"]{background:#DCF5E6;border-color:#2DB36F;color:#136B3D}
+.seg button[aria-checked=true][data-risk="1"]{background:#EEE5FF;border-color:#9061E0;color:#5E35A8}
+.seg i{width:14px;height:14px;border-radius:50%;border:2.5px solid currentColor;display:inline-block;flex:none}
+.seg button[aria-checked=true] i{background:currentColor;box-shadow:inset 0 0 0 2px #fff}
+.risks{border:0;padding:0;margin:12px 0 0;min-width:0}
+.risks legend{font-size:13.5px;color:var(--ink2);padding:0;margin-bottom:8px}
+.risk-wrap{display:flex;flex-wrap:wrap;gap:7px}
+.rk{position:relative;display:inline-flex;align-items:center;gap:8px;padding:6px 12px 6px 8px;border-radius:12px;border:2px solid var(--line);background:#fff;font-size:14px;line-height:1.5;cursor:pointer;max-width:100%}
+.rk input{position:absolute;opacity:0;width:1px;height:1px;margin:0}
+.rk .box{width:20px;height:20px;border-radius:6px;border:2px solid #B9C6DD;flex:none;display:grid;place-items:center;background:#fff;transition:background .2s,border-color .2s}
+.rk input:checked + .box{background:#9061E0;border-color:#9061E0}
+.rk input:checked + .box::after{content:"";width:10px;height:5px;border:2.5px solid #fff;border-top:0;border-right:0;transform:rotate(-45deg) translate(1px,-1px)}
+.rk.on{border-color:#9061E0;background:#F6F1FF}
+.rk input:focus-visible + .box{outline:3px solid var(--pink);outline-offset:2px}
+.fine{font-size:13px;color:var(--ink2);margin-top:8px}
+
+.doc{display:grid;grid-template-columns:76px 1fr;gap:14px;align-items:center;margin:20px 0 14px}
+.doc-ava{width:76px;height:76px;border-radius:50%;border:4px solid #fff;box-shadow:var(--shadow);overflow:hidden;background:#DDF4EA}
+.doc-ava svg{width:100%;height:100%}
+.bubble{position:relative;background:#fff;border:2.5px solid var(--ink);border-radius:18px;padding:9px 14px;font:400 17px/1.55 var(--f-hand);box-shadow:0 3px 0 var(--ink)}
+.bubble::before{content:"";position:absolute;left:-10px;top:50%;width:15px;height:15px;background:#fff;border-left:2.5px solid var(--ink);border-bottom:2.5px solid var(--ink);transform:translateY(-50%) rotate(45deg)}
+.bubble.pop{animation:bpop .45s cubic-bezier(.3,1.5,.5,1)}
+@keyframes bpop{0%{transform:scale(.92)}60%{transform:scale(1.03)}}
+
+.results{display:grid;gap:14px}
+@media (min-width:720px){.results{grid-template-columns:1fr 1fr;align-items:start}}
+.res{background:#fff;border-radius:var(--r-lg);box-shadow:var(--shadow);padding-bottom:16px;overflow:clip}
+.res-head{display:flex;justify-content:space-between;align-items:center;gap:10px;padding:12px 16px;background:linear-gradient(90deg,#FFE4EE,#FFF3F7)}
+.res.free .res-head{background:linear-gradient(90deg,#D9F3E5,#F0FBF5)}
+.res-kind{font:600 17px/1.45 var(--f-display)}
+.res-vax{font-size:13.5px;color:var(--ink2);line-height:1.5}
+.res-badge{font:600 13px/1.45 var(--f-display);padding:3px 11px;border-radius:99px;background:var(--pink);color:#fff;flex:none}
+.res.free .res-badge{background:#168A52}
+.res-body{padding:12px 16px 0;display:grid;gap:10px}
+.pills{display:flex;gap:6px;flex-wrap:wrap}
+.big{display:flex;align-items:flex-end;gap:4px 12px;flex-wrap:wrap}
+.big-num{display:flex;align-items:center;gap:8px;font:600 56px/1.15 var(--f-display);font-variant-numeric:tabular-nums}
+.big-num .plus{font-size:34px;color:var(--ink2)}
+.big-num .boo{background:var(--yellow);border-radius:18px;padding:0 14px;box-shadow:0 4px 0 rgba(27,42,94,.12)}
+.big-unit{font:500 16px/1.4 var(--f-display);color:var(--ink2);padding-bottom:10px}
+.big-unit small{display:block;font:400 12.5px/1.5 var(--f-body)}
+.na{display:inline-flex;align-items:center;gap:10px;font:600 26px/1.35 var(--f-display);color:#7B85A3;background:#F1F4F9;border-radius:16px;padding:6px 14px}
+.na svg{width:26px;height:26px}
+.syrs{display:flex;gap:6px;flex-wrap:wrap;min-height:22px}
+.syr{width:56px;height:21px}
+.syr .liq{transform-box:fill-box;transform-origin:right center}
+.play .syr .liq{animation:fill .7s ease-out backwards;animation-delay:calc(var(--i) * .22s + .1s)}
+@keyframes fill{from{transform:scaleX(0)}}
+.play .big-num{animation:bigpop .6s cubic-bezier(.3,1.6,.5,1)}
+@keyframes bigpop{0%{transform:scale(.6);opacity:.2}60%{transform:scale(1.08);opacity:1}}
+.res-sum{font-size:15px;line-height:1.6}
+.tl{list-style:none;margin:2px 0 0;padding:0}
+.tl-i{display:grid;grid-template-columns:34px 1fr;gap:12px;position:relative;padding-bottom:12px}
+.tl-i::before{content:"";position:absolute;left:15.5px;top:34px;bottom:0;width:3px;background:repeating-linear-gradient(to bottom,#C9D6EA 0 5px,transparent 5px 9px)}
+.tl-i:last-child{padding-bottom:0}
+.tl-i:last-child::before{display:none}
+.tl-dot{width:34px;height:34px;border-radius:50%;display:grid;place-items:center;font:600 16px/1 var(--f-display);background:var(--pink);color:#fff;box-shadow:0 0 0 4px #FFE4EE}
+.res.free .tl-dot{background:#168A52;box-shadow:0 0 0 4px #D9F3E5}
+.tl-i.boo .tl-dot{background:var(--yellow);color:var(--ink);box-shadow:0 0 0 4px #FFF4CC}
+.tl-dot svg{width:18px;height:18px}
+.tl-t{display:flex;flex-wrap:wrap;gap:0 10px;align-items:baseline}
+.tl-t b{font:600 16px/1.5 var(--f-display)}
+.tl-age{font-size:14px;color:var(--ink2)}
+.tl-date{display:inline-block;font:500 14px/1.55 var(--f-display);background:#EEF5FF;border-radius:8px;padding:1px 9px;margin-top:2px}
+.tl-date.today{background:var(--yellow)}
+.tl-gap{display:block;font-size:12.5px;color:var(--ink2);line-height:1.5;margin-top:2px}
+.play .tl-i{animation:tlin .5s cubic-bezier(.2,.8,.2,1) backwards;animation-delay:calc(var(--i) * .13s + .15s)}
+@keyframes tlin{from{transform:translateY(16px);opacity:0}}
+.notes{list-style:none;margin:0;padding:0;display:grid;gap:6px}
+.notes:empty{display:none}
+.notes li{font-size:13.5px;line-height:1.55;background:#FFF7D6;border-radius:10px;padding:7px 10px 7px 32px;position:relative}
+.notes li::before{content:"!";position:absolute;left:9px;top:9px;width:16px;height:16px;border-radius:50%;background:#E9AE00;color:#fff;font:700 11px/16px var(--f-display);text-align:center}
+.actions{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:18px}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;padding:12px 12px;border-radius:16px;font:600 16px/1.4 var(--f-display);text-decoration:none;border:2.5px solid var(--ink);background:#fff;color:var(--ink);box-shadow:0 4px 0 var(--ink);cursor:pointer;text-align:center}
+.btn:active{transform:translateY(3px);box-shadow:0 1px 0 var(--ink)}
+.btn svg{width:20px;height:20px;flex:none}
+.btn.line{background:#05A24A;color:#fff;border-color:#04883E;box-shadow:0 4px 0 #036B31}
+.copybox{margin-top:12px;display:grid;gap:6px}
+.copybox[hidden]{display:none}
+.copybox p{font-size:14px}
+.copybox textarea{width:100%;min-height:220px;font:14px/1.55 var(--f-body);color:var(--ink);border:2px solid var(--line);border-radius:12px;padding:10px;resize:vertical}
+.calc-foot{font-size:14px;color:var(--ink2);text-align:center;margin-top:14px;line-height:1.6}
+
+/* ---------- IPD10 free ---------- */
+.free-card{position:relative;background:linear-gradient(165deg,#FFFFFF 0%,#EFFBF4 100%);border:2.5px solid #BFEBD3}
+.free-card .eyebrow{color:#168A52}
+.free-card h2{padding-right:96px;margin-top:4px}
+.free-card h2 span{color:#168A52}
+.stamp{position:absolute;top:12px;right:12px;width:88px;height:88px;border-radius:50%;border:4px double var(--pink);color:var(--pink);display:grid;place-content:center;text-align:center;font-family:var(--f-display);transform:rotate(-12deg);background:rgba(255,255,255,.75)}
+.stamp b{font-size:31px;line-height:1.15;display:block}
+.stamp small{font-size:11px;line-height:1.3;display:block;font-weight:500}
+.play .stamp{animation:slam .6s cubic-bezier(.2,1.3,.4,1) .2s backwards}
+@keyframes slam{0%{transform:scale(2.8) rotate(-34deg);opacity:0}65%{transform:scale(.9) rotate(-10deg);opacity:1}100%{transform:rotate(-12deg)}}
+.play.free-card{animation:thud .35s ease-out .6s}
+@keyframes thud{40%{transform:translateY(3px)}}
+.facts{list-style:none;padding:0;margin:14px 0 0;display:flex;flex-wrap:wrap;gap:8px}
+.facts li{background:#fff;border:2px solid #CDEFDC;border-radius:12px;padding:4px 11px;font-size:14px;line-height:1.55}
+.facts li b{font-family:var(--f-display);font-weight:600}
+.trail{position:relative;display:grid;grid-template-columns:repeat(3,1fr);margin-top:22px}
+.trail-line{position:absolute;left:16.66%;right:16.66%;top:24px;height:4px;background:repeating-linear-gradient(90deg,#21A866 0 10px,transparent 10px 18px);background-size:18px 4px;animation:march .9s linear infinite}
+@keyframes march{to{background-position:18px 0}}
+.trail-run{position:absolute;top:18px;left:16.66%;width:16px;height:16px;margin-left:-8px;border-radius:50%;background:var(--yellow);border:3px solid var(--ink);animation:run 3.6s ease-in-out infinite;z-index:0}
+@keyframes run{0%,8%{left:16.66%}42%,58%{left:50%}92%,100%{left:83.33%}}
+.tp{display:grid;justify-items:center;text-align:center;position:relative;z-index:1}
+.tp-dot{width:52px;height:52px;border-radius:50%;background:#21A866;color:#fff;display:grid;place-items:center;font:600 18px/1 var(--f-display);border:4px solid #fff;box-shadow:0 3px 0 rgba(27,42,94,.15)}
+.tp.boo .tp-dot{background:var(--yellow);color:var(--ink)}
+.tp b{font:600 16px/1.45 var(--f-display);margin-top:6px}
+.tp .tp-l{font-size:13px;color:var(--ink2);line-height:1.5}
+.play .tp{animation:tlin .5s cubic-bezier(.2,.8,.2,1) backwards;animation-delay:calc(var(--i) * .25s + .5s)}
+.benefits{display:grid;gap:12px;margin-top:14px}
+@media (min-width:720px){.benefits{grid-template-columns:repeat(3,1fr)}}
+.ben{display:grid;grid-template-columns:66px 1fr;gap:12px;align-items:center}
+.ben-ic{width:66px;height:66px;border-radius:20px;background:var(--ib);display:grid;place-items:center}
+.ben-ic svg{width:50px;height:50px}
+.ben h3{font-size:17px;line-height:1.45}
+.ben p{font-size:14px;color:var(--ink2);line-height:1.55}
+.play .ben-ic svg{animation:wob 1s ease-in-out}
+@keyframes wob{30%{transform:rotate(-8deg) scale(1.08)}60%{transform:rotate(6deg)}}
+
+/* ---------- strain chart ---------- */
+.chart-card{padding:16px 14px}
+.legend{display:flex;gap:6px 16px;flex-wrap:wrap;font-size:14px;align-items:center}
+.lg{display:inline-flex;align-items:center;gap:7px}
+.lg i{width:14px;height:14px;border-radius:4px;background:var(--c);display:inline-block}
+.sortbar{display:flex;gap:6px;flex-wrap:wrap;margin:12px 0 10px;align-items:center}
+.sortbar span{font-size:13px;color:var(--ink2);margin-right:2px}
+.tg{border:2px solid var(--line);background:#fff;border-radius:99px;padding:4px 12px;font:500 14px/1.5 var(--f-display);cursor:pointer}
+.tg[aria-pressed=true]{background:var(--ink);border-color:var(--ink);color:#fff}
+.chart{--lab:86px;--val:40px}
+.axis{display:grid;grid-template-columns:var(--lab) 1fr var(--val);font:400 11px/1.4 var(--f-display);color:var(--ink2);margin-bottom:2px}
+.axis-scale{position:relative;height:16px;grid-column:2}
+.axis-scale span{position:absolute;top:0;transform:translateX(-50%)}
+.srow{display:grid;grid-template-columns:var(--lab) 1fr;padding:7px 0;border-top:1px dashed var(--line);cursor:pointer;background:#fff;border-radius:8px}
+.srow:focus-visible{outline-offset:-2px}
+.s-lab{display:grid;align-content:center;gap:2px;padding-right:6px;min-width:0}
+.s-name{font:600 17px/1.35 var(--f-display);display:inline-flex;align-items:center;gap:7px}
+.s-name::after{content:"";width:7px;height:7px;border-right:2px solid var(--ink2);border-bottom:2px solid var(--ink2);transform:rotate(45deg) translate(-2px,-2px);transition:transform .25s}
+.srow.open .s-name::after{transform:rotate(-135deg) translate(-1px,-1px)}
+.badges{display:flex;flex-wrap:wrap;gap:3px}
+.bdg{font:500 10.5px/1.55 var(--f-display);padding:0 6px;border-radius:99px;white-space:nowrap}
+.bdg.top{background:var(--pink);color:#fff}
+.bdg.com{background:var(--yellow);color:var(--ink)}
+.s-bars{display:grid;gap:5px;align-content:center}
+.bar{display:grid;grid-template-columns:1fr var(--val);align-items:center}
+.track{position:relative;height:13px;background-image:linear-gradient(90deg,var(--grid) 1px,transparent 1px);background-size:33.333% 100%;box-shadow:inset -1px 0 0 var(--grid)}
+.cov .track{background-size:25% 100%}
+.fill{position:absolute;left:0;top:0;bottom:0;width:var(--w);border-radius:0 7px 7px 0;background:var(--c);transform-origin:left center}
+.bar.bkk{--c:var(--bkk)}
+.bar.nat{--c:var(--nat)}
+.val{font:500 12.5px/1.2 var(--f-display);padding-left:6px;font-variant-numeric:tabular-nums;white-space:nowrap}
+.play .fill{animation:grow .9s cubic-bezier(.2,.8,.2,1) backwards;animation-delay:calc(var(--i) * 45ms)}
+@keyframes grow{from{transform:scaleX(0)}}
+.s-cov{grid-column:1 / -1;display:none;flex-wrap:wrap;gap:6px;padding:9px 0 3px}
+.srow.open .s-cov{display:flex}
+.s-cov p{flex-basis:100%;font-size:12.5px;color:var(--ink2)}
+.vchip{font:500 13px/1.5 var(--f-display);padding:2px 10px;border-radius:99px;display:inline-flex;align-items:center;gap:5px}
+.vchip.yes{background:#DCF5E6;color:#136B3D}
+.vchip.yes::before{content:"";width:9px;height:5px;border:2.4px solid currentColor;border-top:0;border-right:0;transform:rotate(-45deg) translateY(-2px)}
+.vchip.no{background:#EEF1F6;color:#8790AB;text-decoration:line-through}
+.srow.open .vchip{animation:tlin .35s backwards;animation-delay:calc(var(--i) * 50ms)}
+.sub-h{font:600 18px/1.45 var(--f-display);margin:22px 0 10px}
+.germ-chips{display:flex;flex-wrap:wrap;gap:8px}
+.gchip{display:inline-flex;align-items:center;gap:6px;background:#fff;border-radius:99px;padding:3px 13px 3px 3px;font:600 15px/1.45 var(--f-display);box-shadow:var(--shadow)}
+.gchip svg{width:32px;height:32px}
+.play .gchip{animation:tlin .45s backwards;animation-delay:calc(var(--i) * 70ms)}
+.points{list-style:none;padding:0;margin:0;display:grid;gap:10px;counter-reset:pt}
+@media (min-width:720px){.points.three{grid-template-columns:repeat(3,1fr)}.points.four{grid-template-columns:1fr 1fr}}
+.points li{counter-increment:pt;position:relative;padding:12px 14px 12px 50px;background:#fff;border-radius:16px;box-shadow:var(--shadow);font-size:15px;line-height:1.6}
+.points li::before{content:counter(pt);position:absolute;left:12px;top:12px;width:28px;height:28px;border-radius:50%;background:var(--yellow);font:600 15px/28px var(--f-display);text-align:center}
+.src-note{font-size:12.5px;color:var(--ink2);margin-top:10px;line-height:1.55}
+
+/* ---------- coverage ---------- */
+.cov{--val:50px}
+.crow{display:grid;grid-template-columns:96px 1fr;gap:0 8px;padding:10px;border-radius:16px;align-items:center}
+.crow + .crow{margin-top:4px}
+.crow.top{background:linear-gradient(100deg,#FFD9E7 0%,#FFF1C2 100%);box-shadow:inset 0 0 0 2px #FFCF3F}
+.c-lab b{font:600 19px/1.35 var(--f-display);display:flex;align-items:center;gap:5px}
+.c-lab small{display:block;font-size:12px;color:var(--ink2);line-height:1.45}
+.crown{width:24px;height:24px;flex:none;animation:crown 2.6s ease-in-out infinite}
+@keyframes crown{50%{transform:translateY(-3px) rotate(-8deg)}}
+.cov .axis{grid-template-columns:104px 1fr var(--val)}
+.cov .track{height:15px}
+.cov .val{font-size:13.5px}
+.rank{display:flex;flex-wrap:wrap;align-items:center;gap:6px;margin-top:14px;font:600 15px/1.5 var(--f-display)}
+.rank span{background:#fff;border-radius:10px;padding:3px 10px;box-shadow:var(--shadow)}
+.rank span.first{background:var(--pink);color:#fff}
+.rank i{font-style:normal;color:var(--ink2)}
+.callout{margin-top:16px;display:grid;grid-template-columns:auto 1fr;gap:12px;align-items:start;background:var(--ink);color:#fff;border-radius:20px;padding:16px;font-size:15.5px;line-height:1.65}
+.callout b{color:var(--yellow);font-family:var(--f-display);font-weight:500}
+.callout svg{width:34px;height:34px}
+
+/* ---------- compare table ---------- */
+.tbl-tools{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:8px;margin-bottom:10px}
+.switch{display:inline-flex;align-items:center;gap:10px;border:2px solid var(--line);background:#fff;border-radius:99px;padding:5px 14px 5px 6px;font:500 14px/1.5 var(--f-display);cursor:pointer;text-align:left}
+.switch .kn{width:40px;height:24px;border-radius:99px;background:#CBD5E5;position:relative;flex:none;transition:background .25s}
+.switch .kn::after{content:"";position:absolute;left:3px;top:3px;width:18px;height:18px;border-radius:50%;background:#fff;transition:transform .25s;box-shadow:0 1px 2px rgba(0,0,0,.2)}
+.switch[aria-pressed=true] .kn{background:#E9AE00}
+.switch[aria-pressed=true] .kn::after{transform:translateX(16px)}
+.scroll-hint{font-size:12.5px;color:var(--ink2);display:inline-flex;align-items:center;gap:6px}
+.scroll-hint svg{width:22px;height:14px;animation:nudgex 1.6s ease-in-out infinite}
+@keyframes nudgex{50%{transform:translateX(5px)}}
+.tbl-scroll{overflow-x:auto;-webkit-overflow-scrolling:touch;border-radius:18px;background:#fff;box-shadow:var(--shadow);overscroll-behavior-x:contain}
+table.vt{border-collapse:separate;border-spacing:0;font-size:12px}
+.vt th,.vt td{padding:0;text-align:center;font-weight:inherit;min-width:32px;height:52px;border-bottom:1px solid #EEF2F8}
+.vt thead th{height:auto}
+.vt .grp th{font:500 11.5px/1.4 var(--f-display);padding:6px 10px;text-align:left;color:#fff;border-bottom:0;white-space:nowrap}
+.vt .grp .ga{background:#339BE6}
+.vt .grp .gb{background:#9061E0}
+.vt .grp .gc{background:var(--pink)}
+.vt .sts th{font:600 12.5px/1.4 var(--f-display);height:34px;border-bottom:2px solid var(--line);white-space:nowrap;padding:0 2px}
+.vt .stick{position:sticky;left:0;z-index:2;background:#fff;text-align:left;min-width:118px;max-width:118px;box-shadow:2px 0 0 var(--line)}
+.vt thead .stick{z-index:3;font:600 14px/1.4 var(--f-display);padding:0 12px;vertical-align:middle;color:var(--ink);background:#fff}
+.vt .sumh{font:600 12.5px/1.4 var(--f-display);padding:0 10px;border-left:2px solid var(--line);background:#fff;color:var(--ink);vertical-align:middle}
+.vbtn{display:grid;text-align:left;width:100%;min-height:52px;padding:5px 8px 5px 12px;border:0;background:none;cursor:pointer;align-content:center}
+.vbtn b{font:600 15px/1.35 var(--f-display);color:var(--vc);display:flex;align-items:center;gap:5px}
+.vbtn b::before{content:"";width:9px;height:9px;border-radius:50%;background:var(--vc)}
+.vbtn small{font-size:11px;line-height:1.4;color:var(--ink2);font-weight:400}
+.dot{display:inline-block;width:17px;height:17px;border-radius:50%;background:var(--vc);box-shadow:0 2px 0 rgba(27,42,94,.18);vertical-align:middle}
+.nodot{display:inline-block;width:8px;height:2px;background:#D5DCE8;border-radius:2px;vertical-align:middle}
+.play .dot{animation:dpop .45s cubic-bezier(.3,1.7,.5,1) backwards;animation-delay:calc(var(--i) * 22ms)}
+@keyframes dpop{from{transform:scale(0)}}
+.vt.hl .com{background:#FFF0B3}
+.vt.hl thead .sts .com{background:var(--yellow)}
+.vt tbody tr{transition:opacity .3s}
+.vt.has-sel tbody tr:not(.picked){opacity:.25}
+.vt tbody tr.picked .stick{background:#FFF8E1}
+.vt td.sum{min-width:124px;padding:4px 12px;text-align:left;border-left:2px solid var(--line)}
+.sum-n{font:600 19px/1.2 var(--f-display)}
+.sum-n small{font:400 11px/1.3 var(--f-body);color:var(--ink2);margin-left:3px}
+.sum-c{font-size:11px;line-height:1.35;color:var(--ink2);display:block}
+.sum-c b{font-family:var(--f-display);color:var(--ink);font-size:12.5px}
+.mini{display:block;height:6px;border-radius:99px;background:#EEF1F6;margin-top:3px;overflow:hidden}
+.mini i{display:block;height:100%;width:var(--w);background:#E9AE00;border-radius:99px}
+.tbl-msg{margin-top:12px;background:#fff;border-radius:16px;padding:12px 14px;box-shadow:var(--shadow);font-size:15px;line-height:1.6;min-height:52px}
+.tbl-msg b{font-family:var(--f-display);font-weight:600}
+.tbl-msg.full{background:linear-gradient(100deg,#FFD9E7,#FFF1C2)}
+.foot-ast{font-size:12.5px;color:var(--ink2);margin-top:8px;line-height:1.55}
+
+/* ---------- schedule ---------- */
+.sched{display:grid;gap:10px}
+@media (min-width:720px){.sched{grid-template-columns:1fr 1fr}}
+.s6{display:grid;grid-template-columns:1fr 1fr;gap:6px 14px;text-align:left;width:100%;border:0;border-left:8px solid var(--gs);background:#fff;border-radius:16px;padding:12px 14px;box-shadow:var(--shadow);cursor:pointer;transition:transform .2s}
+.s6:hover{transform:translateY(-2px)}
+.s6:active{transform:translateY(1px)}
+.s6-age{grid-column:1 / -1;display:flex;justify-content:space-between;align-items:center;gap:8px;font:600 17px/1.45 var(--f-display);color:var(--gi)}
+.s6-go{font:500 13px/1.45 var(--f-display);color:var(--ink2);white-space:nowrap;display:inline-flex;align-items:center;gap:4px}
+.s6-col{display:grid;align-content:start}
+.s6-col small{font-size:12px;color:var(--ink2);line-height:1.5}
+.s6-col b{font:600 24px/1.3 var(--f-display)}
+.s6-col span{font-size:13px;line-height:1.5}
+.gloss{margin-top:14px;display:grid;gap:8px;font-size:14.5px;line-height:1.6}
+.gloss p{background:#fff;border-radius:14px;padding:10px 14px;box-shadow:var(--shadow)}
+.gloss b{font-family:var(--f-display);font-weight:600}
+
+/* ---------- contact ---------- */
+.contact{display:grid;gap:14px}
+@media (min-width:720px){.contact{grid-template-columns:1.1fr 1fr}}
+.c-top{display:flex;gap:12px;align-items:center}
+.c-top img{width:64px;height:64px;border-radius:50%;box-shadow:0 0 0 3px #fff,var(--shadow);flex:none}
+.c-top h3{font-size:19px;line-height:1.4}
+.c-top p{font-size:14px;color:var(--ink2)}
+.hours{list-style:none;margin:14px 0 0;padding:0;display:grid;gap:6px}
+.hours li{display:flex;justify-content:space-between;align-items:center;gap:10px;padding:8px 12px;border-radius:12px;background:#F3F8FF;font-size:15px;line-height:1.5}
+.hours li span:first-child{font:500 15px/1.5 var(--f-display)}
+.hours li span:last-child{font:500 15px/1.5 var(--f-display);font-variant-numeric:tabular-nums;white-space:nowrap}
+.hours li.today{background:var(--yellow);box-shadow:0 3px 0 rgba(27,42,94,.12)}
+.hours li.today span:first-child::after{content:"วันนี้";font:500 11.5px/1.5 var(--f-display);background:var(--ink);color:#fff;border-radius:99px;padding:1px 8px;margin-left:8px;vertical-align:1px}
+.cbtns{display:grid;gap:10px;margin-top:14px}
+.cbtn{display:grid;grid-template-columns:46px 1fr auto;align-items:center;gap:12px;padding:10px 14px;border-radius:16px;background:#fff;border:2px solid var(--line);text-decoration:none;color:var(--ink);box-shadow:0 3px 0 var(--line)}
+.cbtn:active{transform:translateY(2px);box-shadow:none}
+.cbtn .ic{width:46px;height:46px;border-radius:50%;display:grid;place-items:center;background:var(--ib)}
+.cbtn .ic svg{width:24px;height:24px}
+.cbtn b{font:600 16px/1.4 var(--f-display);display:block}
+.cbtn span{font-size:14px;color:var(--ink2);line-height:1.5}
+.cbtn .arr{width:18px;height:18px;color:var(--ink2)}
+.slogans{position:relative;text-align:center;padding:30px 18px;border-radius:24px;background:linear-gradient(160deg,#FFE4EE,#FFF6D6);display:grid;gap:10px;align-content:center;min-height:220px}
+.slogans p{position:relative;z-index:1;font:400 24px/1.55 var(--f-hand);color:var(--ink)}
+.slogans p + p{font-size:20px;color:var(--pink)}
+.slogans .doc-ava{position:relative;z-index:1;justify-self:center;width:84px;height:84px}
+.hearts{position:absolute;inset:0;overflow:hidden;pointer-events:none;border-radius:inherit}
+.fh{position:absolute;bottom:-26px;left:var(--x);width:var(--s);color:var(--c);opacity:0;animation:fh var(--d) ease-in infinite;animation-delay:var(--dl)}
+.fh svg{fill:currentColor}
+@keyframes fh{0%{transform:translateY(0) scale(.7);opacity:0}15%{opacity:.85}100%{transform:translateY(-260px) translateX(18px) scale(1.1);opacity:0}}
+.disclaim{margin-top:22px;display:grid;gap:10px;font-size:13px;color:var(--ink2);line-height:1.6}
+.disclaim .warn{background:#fff;border-radius:14px;padding:10px 14px;color:var(--ink);font-size:14px;box-shadow:var(--shadow)}
+.disclaim .warn b{font-family:var(--f-display);font-weight:600;color:var(--pink)}
+footer{padding:22px 0 40px;text-align:center;font-size:12.5px;color:var(--ink2)}
+
+.toast{position:fixed;left:50%;bottom:22px;z-index:95;transform:translate(-50%,30px);opacity:0;background:var(--ink);color:#fff;border-radius:99px;padding:10px 18px;font:500 15px/1.45 var(--f-display);box-shadow:0 8px 24px rgba(27,42,94,.3);transition:opacity .3s,transform .35s cubic-bezier(.3,1.5,.5,1);pointer-events:none;max-width:calc(100% - 32px);text-align:center}
+.toast.show{opacity:1;transform:translate(-50%,0)}
+
+@media (prefers-reduced-motion: reduce){
+  *,*::before,*::after{animation:none !important;transition:none !important;scroll-behavior:auto !important}
+  .germ.popped{transform:scale(0)}
+  .bgh,.fh,.trail-run{display:none}
+}
+</style>
+</head>
+<body>
+<div class="sky" aria-hidden="true">
+  <svg class="cloud" style="--x:-4%;--y:9%;--w:150px;--d:46s;--dl:-8s" viewBox="0 0 120 56"><path d="M24 50h74a18 18 0 0 0 2-36 24 24 0 0 0-44-6A18 18 0 0 0 26 22 14 14 0 0 0 24 50z" fill="#fff"/></svg>
+  <svg class="cloud" style="--x:64%;--y:5%;--w:110px;--d:58s;--dl:-20s" viewBox="0 0 120 56"><path d="M24 50h74a18 18 0 0 0 2-36 24 24 0 0 0-44-6A18 18 0 0 0 26 22 14 14 0 0 0 24 50z" fill="#fff" opacity=".9"/></svg>
+  <svg class="cloud" style="--x:72%;--y:38%;--w:170px;--d:64s;--dl:-31s" viewBox="0 0 120 56"><path d="M24 50h74a18 18 0 0 0 2-36 24 24 0 0 0-44-6A18 18 0 0 0 26 22 14 14 0 0 0 24 50z" fill="#fff" opacity=".85"/></svg>
+  <svg class="cloud" style="--x:2%;--y:56%;--w:120px;--d:52s;--dl:-12s" viewBox="0 0 120 56"><path d="M24 50h74a18 18 0 0 0 2-36 24 24 0 0 0-44-6A18 18 0 0 0 26 22 14 14 0 0 0 24 50z" fill="#fff" opacity=".85"/></svg>
+  <svg class="cloud" style="--x:40%;--y:80%;--w:140px;--d:70s;--dl:-40s" viewBox="0 0 120 56"><path d="M24 50h74a18 18 0 0 0 2-36 24 24 0 0 0-44-6A18 18 0 0 0 26 22 14 14 0 0 0 24 50z" fill="#fff" opacity=".8"/></svg>
+  <span class="bgh" style="--x:8%;--s:16px;--c:#F7A1BF;--d:19s;--dl:-3s"><svg viewBox="0 0 24 24"><path d="M12 21.2S3.3 15.9 1.6 10.4C.4 6.6 2.7 3.3 6.3 3.3c2.4 0 4 1.4 5.7 3.3 1.7-1.9 3.3-3.3 5.7-3.3 3.6 0 5.9 3.3 4.7 7.1C20.7 15.9 12 21.2 12 21.2z"/></svg></span>
+  <span class="bgh" style="--x:88%;--s:20px;--c:#FFCF3F;--d:23s;--dl:-11s"><svg viewBox="0 0 24 24"><path d="M12 21.2S3.3 15.9 1.6 10.4C.4 6.6 2.7 3.3 6.3 3.3c2.4 0 4 1.4 5.7 3.3 1.7-1.9 3.3-3.3 5.7-3.3 3.6 0 5.9 3.3 4.7 7.1C20.7 15.9 12 21.2 12 21.2z"/></svg></span>
+  <span class="bgh" style="--x:52%;--s:14px;--c:#E8336D;--d:27s;--dl:-17s"><svg viewBox="0 0 24 24"><path d="M12 21.2S3.3 15.9 1.6 10.4C.4 6.6 2.7 3.3 6.3 3.3c2.4 0 4 1.4 5.7 3.3 1.7-1.9 3.3-3.3 5.7-3.3 3.6 0 5.9 3.3 4.7 7.1C20.7 15.9 12 21.2 12 21.2z"/></svg></span>
+</div>
+<div class="fx" id="fx" aria-hidden="true"></div>
+
+<div class="page">
+<header class="topbar">
+  <div class="topbar-in">
+    <button class="top-logo" type="button" id="toTop" aria-label="กลับขึ้นด้านบน"><img src="logo.jpg" alt=""></button>
+    <nav class="chips" id="chips" aria-label="หัวข้อในหน้านี้">
+      <a class="chip" href="#calc">คำนวณเข็ม</a>
+      <a class="chip" href="#free">IPD10 ฟรี</a>
+      <a class="chip" href="#strains">สายพันธุ์ในไทย</a>
+      <a class="chip" href="#coverage">ความครอบคลุม</a>
+      <a class="chip" href="#compare">เทียบวัคซีน</a>
+      <a class="chip" href="#schedule">ตารางเข็ม</a>
+      <a class="chip" href="#contact">ติดต่อคลินิก</a>
+    </nav>
+  </div>
+</header>
+
+<main class="wrap">
+  <!-- ================= HERO ================= -->
+  <section class="hero" id="hero" data-replay>
+    <div class="hero-tags">
+      <span class="clinic-chip"><img src="logo.jpg" alt="โลโก้คลินิกเด็กหมอจิรายุส">คลินิกเด็กหมอจิรายุส เวียงสระ</span>
+      <span class="open-pill">เปิดอยู่</span>
+    </div>
+    <h1><span class="h1a"><span class="nw">วัคซีนปอดอักเสบ</span> <em>IPD</em></span><span class="h1b"><span class="hl">ลูกต้องฉีดกี่เข็ม?<svg viewBox="0 0 300 30" preserveAspectRatio="none" aria-hidden="true"><path pathLength="1" d="M4 19 C 50 9, 96 25, 150 16 S 250 10, 296 17"/></svg></span></span></h1>
+    <p class="lead">สรุปเรื่องวัคซีน PCV ป้องกันโรคติดเชื้อนิวโมคอคคัส สำหรับคุณพ่อคุณแม่ พร้อมตัวคำนวณจำนวนเข็มตามอายุลูก</p>
+    <div class="arena-box">
+      <div class="arena" id="arena">
+        <div class="praise" id="praise" role="status" aria-live="polite"></div>
+        <div class="kid" id="kid">
+          <svg viewBox="0 0 200 200" aria-hidden="true">
+            <circle cx="100" cy="100" r="100" fill="#FFF1C7"/>
+            <path d="M36 44l3 7 7 3-7 3-3 7-3-7-7-3 7-3z" fill="#fff"/>
+            <path d="M166 58l2 5 5 2-5 2-2 5-2-5-5-2 5-2z" fill="#fff"/>
+            <path d="M34 214 C36 160 60 136 100 136 C140 136 164 160 166 214 Z" fill="#8FD3FF" stroke="#1B2A5E" stroke-width="4" stroke-linejoin="round"/>
+            <circle cx="61" cy="90" r="9" fill="#FDE3D0" stroke="#1B2A5E" stroke-width="4"/>
+            <circle cx="139" cy="90" r="9" fill="#FDE3D0" stroke="#1B2A5E" stroke-width="4"/>
+            <circle cx="100" cy="88" r="40" fill="#FDE3D0" stroke="#1B2A5E" stroke-width="4"/>
+            <path d="M60 88 C55 58 78 44 100 45 C124 44 146 60 140 88 C133 74 121 66 107 67 C112 60 105 55 98 61 C89 70 73 73 60 88 Z" fill="#1B2A5E"/>
+            <path d="M99 46 C95 34 106 29 112 37" fill="none" stroke="#1B2A5E" stroke-width="4" stroke-linecap="round"/>
+            <path d="M80 92 Q86 85 92 92 M108 92 Q114 85 120 92" fill="none" stroke="#1B2A5E" stroke-width="3.6" stroke-linecap="round"/>
+            <ellipse cx="76" cy="103" rx="7" ry="4.5" fill="#F7A1BF" opacity=".85"/>
+            <ellipse cx="124" cy="103" rx="7" ry="4.5" fill="#F7A1BF" opacity=".85"/>
+            <path d="M91 104 Q100 115 109 104 Z" fill="#E8336D" stroke="#1B2A5E" stroke-width="3" stroke-linejoin="round"/>
+            <circle cx="73" cy="142" r="11" fill="#C98B5A" stroke="#1B2A5E" stroke-width="4"/>
+            <circle cx="127" cy="142" r="11" fill="#C98B5A" stroke="#1B2A5E" stroke-width="4"/>
+            <circle cx="73" cy="142" r="4.5" fill="#F2C7A1"/>
+            <circle cx="127" cy="142" r="4.5" fill="#F2C7A1"/>
+            <ellipse cx="100" cy="198" rx="36" ry="28" fill="#C98B5A" stroke="#1B2A5E" stroke-width="4"/>
+            <circle cx="100" cy="160" r="27" fill="#C98B5A" stroke="#1B2A5E" stroke-width="4"/>
+            <ellipse cx="100" cy="170" rx="12" ry="9" fill="#F2D3B0"/>
+            <ellipse cx="100" cy="165.5" rx="5" ry="3.6" fill="#1B2A5E"/>
+            <path d="M100 168 v4 M95.5 173 q4.5 3.4 9 0" fill="none" stroke="#1B2A5E" stroke-width="2.4" stroke-linecap="round"/>
+            <circle cx="90.5" cy="154" r="3.2" fill="#1B2A5E"/>
+            <circle cx="109.5" cy="154" r="3.2" fill="#1B2A5E"/>
+            <path d="M48 160 C56 188 84 194 99 184" fill="none" stroke="#1B2A5E" stroke-width="18" stroke-linecap="round"/>
+            <path d="M152 160 C144 188 116 194 101 184" fill="none" stroke="#1B2A5E" stroke-width="18" stroke-linecap="round"/>
+            <path d="M48 160 C56 188 84 194 99 184" fill="none" stroke="#FDE3D0" stroke-width="10" stroke-linecap="round"/>
+            <path d="M152 160 C144 188 116 194 101 184" fill="none" stroke="#FDE3D0" stroke-width="10" stroke-linecap="round"/>
+            <path d="M153 116c-3-5-10-3-9 2 1 4 9 9 9 9s8-5 9-9c1-5-6-7-9-2z" fill="#E8336D"/>
+          </svg>
+        </div>
+      </div>
+      <p class="score" aria-live="polite">ปราบแล้ว <b id="kills">0</b> ตัว<small>แตะเชื้อหน้าบึ้งรอบตัวน้องเพื่อปราบ · ป้ายบนตัวเชื้อคือสายพันธุ์ที่พบบ่อยในเด็กไทย</small></p>
+    </div>
+    <p class="trial"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="10" fill="#E9AE00"/><path d="M12 6.5v7" stroke="#fff" stroke-width="2.6" stroke-linecap="round"/><circle cx="12" cy="17.2" r="1.6" fill="#fff"/></svg><span><b>ทดลองใช้เบื้องต้น</b> · โปรดปรึกษาแพทย์เพื่อยืนยันความถูกต้องอีกครั้ง</span></p>
+    <p class="slogan-hand">วัคซีนวันนี้... เพื่ออนาคตที่แข็งแรงของลูก</p>
+    <a class="cta jump" href="#calc">เริ่มคำนวณจำนวนเข็ม<svg viewBox="0 0 20 20" aria-hidden="true"><path d="M10 3v13M4 10.5l6 6 6-6" fill="none" stroke="#fff" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+  </section>
+
+  <!-- ================= 1 CALCULATOR ================= -->
+  <section class="sec" id="calc">
+    <div class="sec-head">
+      <p class="eyebrow">ตัวคำนวณจำนวนเข็ม</p>
+      <h2>ลูกเริ่มฉีดตอนอายุเท่าไร?</h2>
+      <p class="sec-lead">ใช้สำหรับเด็กที่ยังไม่เคยได้รับวัคซีน PCV เลือกอายุตอนเริ่มเข็มแรก แล้วบอกว่ามีภาวะเสี่ยงไหม ระบบจะเทียบวัคซีนที่คลินิกกับวัคซีนฟรีของรัฐให้</p>
+    </div>
+
+    <div class="card calc-card">
+      <label class="lbl" for="ageRange">อายุตอนเริ่มฉีดเข็มแรก</label>
+      <div class="age-row"><span class="age-big" id="ageText">2 เดือน</span><span class="gpill" id="grpPill" data-c="pink">2–6 เดือน</span></div>
+      <div class="slider-row">
+        <button class="step" type="button" id="minus" aria-label="ลดอายุ 1 เดือน">−</button>
+        <input type="range" id="ageRange" min="0" max="72" step="1" value="2" aria-valuetext="2 เดือน">
+        <button class="step" type="button" id="plus" aria-label="เพิ่มอายุ 1 เดือน">+</button>
+      </div>
+      <div class="ticks" aria-hidden="true"><span style="--p:0">0</span><span style="--p:.1667">1 ปี</span><span style="--p:.3333">2 ปี</span><span style="--p:.5">3 ปี</span><span style="--p:.6667">4 ปี</span><span style="--p:.8333">5 ปี</span><span style="--p:1">6 ปี</span></div>
+      <div class="selects">
+        <label class="sel" for="ageY">ปี<select id="ageY"></select></label>
+        <label class="sel" for="ageM">เดือน<select id="ageM"></select></label>
+      </div>
+      <div class="quick" role="group" aria-label="ปุ่มลัดเลือกอายุ">
+        <button class="q" type="button" data-age="2">2 ด.</button>
+        <button class="q" type="button" data-age="4">4 ด.</button>
+        <button class="q" type="button" data-age="6">6 ด.</button>
+        <button class="q" type="button" data-age="9">9 ด.</button>
+        <button class="q" type="button" data-age="12">1 ปี</button>
+        <button class="q" type="button" data-age="18">1 ปีครึ่ง</button>
+        <button class="q" type="button" data-age="24">2 ปี</button>
+        <button class="q" type="button" data-age="36">3 ปี</button>
+        <button class="q" type="button" data-age="48">4 ปี</button>
+        <button class="q" type="button" data-age="60">5 ปี</button>
+      </div>
+
+      <div class="divider" role="presentation"></div>
+      <span class="lbl" id="riskLbl">ลูกอยู่ในกลุ่มเสี่ยงไหม?</span>
+      <div class="seg" role="radiogroup" aria-labelledby="riskLbl">
+        <button type="button" role="radio" aria-checked="true" data-risk="0"><i></i>ไม่มี</button>
+        <button type="button" role="radio" aria-checked="false" data-risk="1"><i></i>มี</button>
+      </div>
+      <fieldset class="risks">
+        <legend>ตัวอย่างภาวะเสี่ยง · ติ๊กข้อใดข้อหนึ่งจะเปลี่ยนเป็น “มี” ให้อัตโนมัติ</legend>
+        <div class="risk-wrap" id="riskWrap"></div>
+      </fieldset>
+      <p class="fine">รายการนี้เป็นเพียงตัวอย่าง แพทย์จะประเมินภาวะเสี่ยงของลูกอีกครั้ง</p>
+    </div>
+
+    <div class="doc">
+      <div class="doc-ava" aria-hidden="true"><svg viewBox="0 0 120 120" aria-hidden="true"><circle cx="60" cy="60" r="60" fill="#DDF4EA"/><path d="M17 130 C19 97 37 82 60 82 C83 82 101 97 103 130 Z" fill="#fff" stroke="#1B2A5E" stroke-width="3.2" stroke-linejoin="round"/><path d="M49 83 L60 100 L71 83 Z" fill="#8FD3FF" stroke="#1B2A5E" stroke-width="3" stroke-linejoin="round"/><path d="M46.5 84 L57 114 M73.5 84 L63 114" fill="none" stroke="#1B2A5E" stroke-width="3" stroke-linecap="round"/><path d="M43 87 C38 103 45 112 55 111" fill="none" stroke="#E8336D" stroke-width="3.6" stroke-linecap="round"/><path d="M77 87 C83 99 81 105 77 107" fill="none" stroke="#E8336D" stroke-width="3.6" stroke-linecap="round"/><circle cx="76" cy="109" r="5.2" fill="#FFCF3F" stroke="#1B2A5E" stroke-width="2.6"/><rect x="82" y="93" width="10" height="12" rx="2.5" fill="#FFE4EE" stroke="#1B2A5E" stroke-width="2.4"/><path d="M87 89v6" stroke="#339BE6" stroke-width="2.6" stroke-linecap="round"/><circle cx="35.5" cy="55" r="6" fill="#FDE3D0" stroke="#1B2A5E" stroke-width="3"/><circle cx="84.5" cy="55" r="6" fill="#FDE3D0" stroke="#1B2A5E" stroke-width="3"/><circle cx="60" cy="53" r="25" fill="#FDE3D0" stroke="#1B2A5E" stroke-width="3.2"/><path d="M35 52 C33 32 48 25 61 26 C76 26 88 36 85 53 C80 42 70 37 58 39 C50 40 41 44 35 52 Z" fill="#1B2A5E"/><circle cx="50" cy="56" r="7.6" fill="#fff" fill-opacity=".45" stroke="#1B2A5E" stroke-width="2.6"/><circle cx="70" cy="56" r="7.6" fill="#fff" fill-opacity=".45" stroke="#1B2A5E" stroke-width="2.6"/><path d="M57.6 56h4.8" stroke="#1B2A5E" stroke-width="2.6"/><circle cx="50" cy="57" r="2.4" fill="#1B2A5E"/><circle cx="70" cy="57" r="2.4" fill="#1B2A5E"/><ellipse cx="42.5" cy="66" rx="5" ry="3.2" fill="#F7A1BF" opacity=".85"/><ellipse cx="77.5" cy="66" rx="5" ry="3.2" fill="#F7A1BF" opacity=".85"/><path d="M53 67.5 Q60 74.5 67 67.5" fill="none" stroke="#1B2A5E" stroke-width="3" stroke-linecap="round"/></svg></div>
+      <p class="bubble" id="speech" aria-live="polite"></p>
+    </div>
+
+    <div class="results" id="resWrap">
+      <article class="res" id="resClinic" aria-label="ผลสำหรับวัคซีนทางเลือกที่คลินิก">
+        <div class="res-head"><div><p class="res-kind">วัคซีนทางเลือกที่คลินิก</p><p class="res-vax"></p></div><span class="res-badge">คลินิก</span></div>
+        <div class="res-body"><div class="pills"></div><div class="big"></div><div class="syrs"></div><p class="res-sum"></p><ol class="tl"></ol><ul class="notes"></ul></div>
+      </article>
+      <article class="res free" id="resFree" aria-label="ผลสำหรับวัคซีนฟรีของรัฐ">
+        <div class="res-head"><div><p class="res-kind">วัคซีนฟรีของรัฐ</p><p class="res-vax"></p></div><span class="res-badge">ฟรี</span></div>
+        <div class="res-body"><div class="pills"></div><div class="big"></div><div class="syrs"></div><p class="res-sum"></p><ol class="tl"></ol><ul class="notes"></ul></div>
+      </article>
+    </div>
+
+    <div class="actions">
+      <button class="btn" type="button" id="copyBtn"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="8" y="8" width="12" height="13" rx="3" fill="none" stroke="currentColor" stroke-width="2.2"/><path d="M16 5.5V5a2 2 0 0 0-2-2H6a2 2 0 0 0-2 2v10a2 2 0 0 0 2 2h.5" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/></svg>คัดลอกสรุป</button>
+      <a class="btn line" href="https://line.me/R/ti/p/@jirayusclinic" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3C6.5 3 2 6.6 2 11c0 3.9 3.5 7.2 8.3 7.9.6.1.6.5.5 1.1l-.2 1.3c0 .4.2.7.7.4 3.5-1.9 8.7-5.6 8.7-10.7C20 6.6 17.5 3 12 3z" fill="#fff"/><path d="M6.5 9v4h2.3M10.3 9v4M12.4 13V9l2.6 4V9M19 9h-2.5v4H19M16.5 11H19" fill="none" stroke="#05A24A" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" transform="translate(-1.3 0)"/></svg>นัดฉีดทาง LINE</a>
+    </div>
+    <div class="copybox" id="copyBox" hidden>
+      <p>คัดลอกอัตโนมัติไม่ได้ในหน้านี้ กดค้างที่ข้อความแล้วเลือก “คัดลอก” ได้เลย</p>
+      <label class="vh" for="copyText">ข้อความสรุปสำหรับวางใน LINE</label>
+      <textarea id="copyText" readonly></textarea>
+    </div>
+    <p class="calc-foot">เป็นแนวทางทั่วไป แพทย์จะยืนยันจำนวนเข็มและวันนัดอีกครั้ง<br>วันที่ในตารางนับจากวันนี้โดยประมาณ (ระยะห่าง 4–8 สัปดาห์ นับเป็น 2 เดือน)</p>
+  </section>
+
+  <!-- ================= 2 IPD10 FREE ================= -->
+  <section class="sec" id="free">
+    <div class="card free-card" data-replay id="freeCard">
+      <div class="stamp" aria-hidden="true"><div><b>ฟรี</b><small>IPD10</small></div></div>
+      <p class="eyebrow">ในระบบวัคซีนแห่งชาติ</p>
+      <h2>เด็กไทยใกล้ได้ <span>IPD10 ฟรี</span>แล้ว</h2>
+      <ul class="facts">
+        <li>เริ่ม <b>พฤศจิกายน–ธันวาคม 2569</b></li>
+        <li>ป้องกันได้ <b>10 สายพันธุ์</b></li>
+        <li>สูตร <b>2+1 เข็ม</b></li>
+        <li>จำกัดอายุ<b>ไม่เกิน 2 ปี</b> · อายุเกิน 2 ปี ให้ฉีดวัคซีนตัวอื่นทดแทน</li>
+      </ul>
+      <div class="trail" aria-label="ตารางฉีด IPD10 ฟรี 3 เข็ม">
+        <div class="trail-line" aria-hidden="true"></div>
+        <div class="trail-run" aria-hidden="true"></div>
+        <div class="tp" style="--i:0"><span class="tp-dot">1</span><b>2 เดือน</b><span class="tp-l">เข็มที่ 1</span></div>
+        <div class="tp" style="--i:1"><span class="tp-dot">2</span><b>4 เดือน</b><span class="tp-l">เข็มที่ 2</span></div>
+        <div class="tp boo" style="--i:2"><span class="tp-dot">3</span><b>12 เดือน</b><span class="tp-l">เข็มที่ 3 (กระตุ้น)</span></div>
+      </div>
+    </div>
+    <div class="benefits" data-replay>
+      <div class="card ben">
+        <span class="ben-ic" style="--ib:#FFE4EE"><svg viewBox="0 0 64 64" aria-hidden="true"><g stroke="#1B2A5E" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M27.5 21C15 17.5 7.5 31 8.2 45c.4 8.5 8 10.6 15.6 7 4-1.9 4.4-6.8 4.2-12.4L28 24.5" fill="#FFB3CB"/><path d="M36.5 21C49 17.5 56.5 31 55.8 45c-.4 8.5-8 10.6-15.6 7-4-1.9-4.4-6.8-4.2-12.4L36 24.5" fill="#FFB3CB"/><path d="M32 7.5v19M32 26c-2 4-5.5 6.5-9.5 7.5M32 26c2 4 5.5 6.5 9.5 7.5" fill="none"/></g><path d="M14 40c0-5 1.5-9 4-12M50 40c0-5-1.5-9-4-12" stroke="#fff" stroke-width="2.6" stroke-linecap="round" fill="none"/></svg></span>
+        <div><h3>ลดความเสี่ยงปอดอักเสบ</h3><p>สาเหตุการนอนโรงพยาบาลในเด็กเล็ก</p></div>
+      </div>
+      <div class="card ben">
+        <span class="ben-ic" style="--ib:#EEE5FF"><svg viewBox="0 0 64 64" aria-hidden="true"><path d="M20.5 47.5C10 48 7.5 37.5 12.5 32.5 7 27 12 16.5 20.5 17.5c2-7.5 12.5-9 15.5-2.5 6.5-5 17 .5 15.5 8.5 7 3 6.5 14-.5 16 1 8.5-8.5 12.5-14 8-4.5 5.5-13.5 5.5-16.5 0z" fill="#D7C8FF" stroke="#1B2A5E" stroke-width="3" stroke-linejoin="round"/><path d="M32.5 16.5c-2.5 7 3 10.5-.5 18-2 4.5.5 9 2.5 11.5M21 28.5c4 .5 6.5 3.5 6 7.5M45 26.5c-4 1-5.5 4.5-4.5 8" fill="none" stroke="#1B2A5E" stroke-width="2.6" stroke-linecap="round"/><path d="M45 41l6 2.5v5c0 3.5-2.6 6-6 7.5-3.4-1.5-6-4-6-7.5v-5z" fill="#2DB36F" stroke="#1B2A5E" stroke-width="2.6" stroke-linejoin="round"/></svg></span>
+        <div><h3>ป้องกันเยื่อหุ้มสมองอักเสบ</h3><p>ลดภาวะแทรกซ้อนรุนแรง</p></div>
+      </div>
+      <div class="card ben">
+        <span class="ben-ic" style="--ib:#FFECD6"><svg viewBox="0 0 64 64" aria-hidden="true"><path d="M31.5 7.5c-7.5 11.5-17 20.5-17 32.5 0 9.5 7.5 16.5 17.5 16.5S50 49.5 50 40c0-12-10.5-21-18.5-32.5z" fill="#FF8FA6" stroke="#1B2A5E" stroke-width="3" stroke-linejoin="round"/><path d="M21.5 40.5c-.3-5 2-9.5 5-13" fill="none" stroke="#fff" stroke-width="3" stroke-linecap="round"/><path d="M26 42.5l4.5 4.5 9-11" fill="none" stroke="#1B2A5E" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+        <div><h3>ลดการติดเชื้อในกระแสเลือด</h3><p>ที่อาจเป็นอันตรายถึงชีวิต</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= 3 STRAINS ================= -->
+  <section class="sec" id="strains">
+    <div class="sec-head">
+      <p class="eyebrow">สายพันธุ์เชื้อในเด็กไทย</p>
+      <h2>เชื้อสายพันธุ์ไหน<span class="nw">พบบ่อย</span>ในเด็กไทย <span class="nw">≤ 5 ปี</span></h2>
+      <p class="sec-lead">สัดส่วนสายพันธุ์ของเชื้อนิวโมคอคคัสที่ก่อโรค IPD ระหว่างปี 2017 – ก.ย. 2025 แตะแต่ละสายพันธุ์เพื่อดูว่าวัคซีนตัวไหนครอบคลุม</p>
+    </div>
+    <div class="card chart-card">
+      <div class="legend"><span class="lg" style="--c:var(--bkk)"><i></i>กรุงเทพฯ</span><span class="lg" style="--c:var(--nat)"><i></i>ทั่วประเทศ</span></div>
+      <div class="sortbar" role="group" aria-label="เรียงลำดับกราฟ"><span class="vh">เรียงลำดับ</span><button class="tg" type="button" data-sort="nat" aria-pressed="false">ตามทั่วประเทศ</button><button class="tg" type="button" data-sort="bkk" aria-pressed="false">ตามกรุงเทพฯ</button><button class="tg" type="button" data-sort="orig" aria-pressed="true">ลำดับเดิม</button></div>
+      <div class="chart" id="strainChart" data-replay>
+        <div class="axis" aria-hidden="true"><span></span><div class="axis-scale"><span style="left:0">0</span><span style="left:33.333%">10</span><span style="left:66.667%">20</span><span style="left:100%">30%</span></div></div>
+        <div id="strainRows"></div>
+      </div>
+    </div>
+    <h3 class="sub-h">สายพันธุ์ที่พบบ่อยในเด็กไทย</h3>
+    <div class="germ-chips" id="germChips" data-replay></div>
+    <h3 class="sub-h">สรุปง่าย ๆ</h3>
+    <ol class="points three">
+      <li>เชื้อมีหลายสายพันธุ์ แต่ตัวที่พบบ่อยในเด็กไทยป้องกันได้ด้วยวัคซีน</li>
+      <li>วัคซีนที่ครอบคลุมสายพันธุ์มากกว่า มีโอกาสลดการป่วยรุนแรงได้มากกว่า</li>
+      <li>ควรปรึกษาแพทย์เพื่อเลือกวัคซีนให้เหมาะกับอายุและความเสี่ยงของลูก</li>
+    </ol>
+  </section>
+
+  <!-- ================= 4 COVERAGE ================= -->
+  <section class="sec" id="coverage">
+    <div class="sec-head">
+      <p class="eyebrow">ความครอบคลุมจริงในไทย</p>
+      <h2>วัคซีนแต่ละตัวครอบคลุมเชื้อที่พบในเด็กไทยกี่ %</h2>
+      <p class="sec-lead">สัดส่วนของเชื้อที่พบในเด็กไทย ซึ่งเป็นสายพันธุ์ที่อยู่ในวัคซีนแต่ละชนิด</p>
+    </div>
+    <div class="card chart-card cov" id="covChart" data-replay>
+      <div class="legend"><span class="lg" style="--c:var(--bkk)"><i></i>กรุงเทพฯ</span><span class="lg" style="--c:var(--nat)"><i></i>ทั่วประเทศ</span></div>
+      <div class="axis" aria-hidden="true" style="margin-top:12px"><span></span><div class="axis-scale"><span style="left:0">0</span><span style="left:25%">25</span><span style="left:50%">50</span><span style="left:75%">75</span><span style="left:100%">100%</span></div></div>
+      <div id="covRows"></div>
+      <div class="rank" aria-label="ลำดับความครอบคลุม"><span class="first">PCV20</span><i>&gt;</i><span>PCV13</span><i>=</i><span>PCV15</span><i>&gt;</i><span>PCV14</span><i>&gt;</i><span>PCV10</span></div>
+    </div>
+    <div class="callout"><svg viewBox="0 0 36 36" aria-hidden="true"><path d="M18 3l12 4.5v9c0 7.5-5.2 13.4-12 16.5C11.2 29.9 6 24 6 16.5v-9z" fill="#FFCF3F"/><path d="M12.5 18l4 4 7.5-8.5" fill="none" stroke="#1B2A5E" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg><p><b>ยิ่งครอบคลุมมาก ยิ่งลดโอกาสเกิดปอดอักเสบในเด็กเล็ก</b> — ควรเลือกวัคซีนให้เหมาะกับอายุ ภาวะเสี่ยง และคำแนะนำของแพทย์</p></div>
+  </section>
+
+  <!-- ================= 5 COMPARE TABLE ================= -->
+  <section class="sec" id="compare">
+    <div class="sec-head">
+      <p class="eyebrow">เทียบสายพันธุ์ของวัคซีน</p>
+      <h2>วัคซีนแต่ละตัวมีสายพันธุ์อะไรบ้าง</h2>
+      <p class="sec-lead">จุดสี = วัคซีนมีสายพันธุ์นั้น · แตะชื่อวัคซีนเพื่อดูสรุปทีละตัว</p>
+    </div>
+    <div class="tbl-tools">
+      <button class="switch" type="button" id="hlToggle" aria-pressed="true"><span class="kn" aria-hidden="true"></span>ไฮไลต์สายพันธุ์ที่พบบ่อยในไทย</button>
+      <span class="scroll-hint" aria-hidden="true">เลื่อนตารางไปทางขวา<svg viewBox="0 0 22 14"><path d="M1 7h18M14 2l5 5-5 5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+    </div>
+    <div class="tbl-scroll" id="vtWrap" data-replay tabindex="0" aria-label="ตารางเทียบสายพันธุ์ของวัคซีน เลื่อนแนวนอนได้"><table class="vt hl" id="vt"></table></div>
+    <p class="tbl-msg" id="tblMsg" aria-live="polite">แตะชื่อวัคซีนในตาราง เพื่อดูว่าครอบคลุมสายพันธุ์เด่นในไทยกี่ตัว</p>
+    <p class="foot-ast">* สายพันธุ์เด่นในไทย 9 ตัว: 14, 19A, 12F, 19F, 18C, 15B/C, 1, 7F, 5 · PCV20 มีสายพันธุ์ 15B ซึ่งข้อมูลระบาดวิทยารายงานรวมเป็น 15B/C จึงนับว่าครอบคลุม</p>
+    <h3 class="sub-h">สรุปจากตาราง</h3>
+    <ol class="points four">
+      <li><b>PCV20</b> ครอบคลุมมากที่สุด เพิ่มจาก PCV13 อีก 7 สายพันธุ์ (8, 10A, 11A, 12F, 15B, 22F, 33F)</li>
+      <li><b>PCV13</b> กับ <b>PCV15</b> ครอบคลุมใกล้เคียงกัน</li>
+      <li><b>PCV14</b> เพิ่ม 22F, 33F แต่ไม่มี 6A</li>
+      <li><b>PCV10</b> ครอบคลุมน้อยกว่า แต่ยังช่วยป้องกันโรครุนแรงได้</li>
+    </ol>
+  </section>
+
+  <!-- ================= 6 SCHEDULE ================= -->
+  <section class="sec" id="schedule">
+    <div class="sec-head">
+      <p class="eyebrow">ตารางจำนวนเข็มอ้างอิง</p>
+      <h2>สรุปจำนวนเข็มตามอายุที่เริ่มฉีด</h2>
+      <p class="sec-lead">แตะแถวไหนก็ได้ ระบบจะตั้งอายุให้ในตัวคำนวณแล้วพากลับขึ้นไปดูผล</p>
+    </div>
+    <div class="sched" id="sched"></div>
+    <div class="gloss">
+      <p><b>PCV</b> = วัคซีนป้องกันโรคปอดอักเสบจากเชื้อ<span class="nw">สเตรปโตคอคคัสนิวโมเนีย</span> (Pneumococcal Conjugate Vaccine)</p>
+      <p><b>ตัวเลขหลัง PCV</b> คือจำนวนสายพันธุ์ที่ครอบคลุม เช่น PCV20 = 20 สายพันธุ์</p>
+      <p><b>* กลุ่มเสี่ยง</b> เช่น โรคหัวใจ โรคปอดเรื้อรัง ไม่มีม้าม ภูมิคุ้มกันบกพร่อง ดูตัวอย่างเพิ่มเติมได้ในตัวคำนวณ · อายุต่ำกว่า 2 ปีให้ดูตามแถวอายุ</p>
+    </div>
+  </section>
+
+  <!-- ================= 7 CONTACT ================= -->
+  <section class="sec" id="contact">
+    <div class="sec-head">
+      <p class="eyebrow">ติดต่อคลินิก</p>
+      <h2>นัดฉีดวัคซีนกับหมอจิรายุส</h2>
+    </div>
+    <div class="contact">
+      <div class="card">
+        <div class="c-top"><img src="logo.jpg" alt="โลโก้คลินิกเด็กหมอจิรายุส"><div><h3>คลินิกเด็กหมอจิรายุส เวียงสระ</h3><p>ข้างธนาคารกสิกรไทย เวียงสระ</p><span class="open-pill" style="margin-top:6px">เปิดอยู่</span></div></div>
+        <ul class="hours" aria-label="เวลาทำการ">
+          <li data-d="wk"><span>จันทร์–ศุกร์</span><span>17.00–20.00 น.</span></li>
+          <li data-d="sat"><span>เสาร์</span><span>09.00–12.00 น.</span></li>
+          <li data-d="sun"><span>อาทิตย์</span><span>09.00–16.00 น.</span></li>
+        </ul>
+        <div class="cbtns">
+          <a class="cbtn" href="tel:0625691900"><span class="ic" style="--ib:#FFE4EE"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6.6 3.5l2.6.4 1.3 4-1.9 1.6a12 12 0 0 0 5.9 5.9l1.6-1.9 4 1.3.4 2.6c-.1 1.7-1.6 3.1-3.3 3.1A15.6 15.6 0 0 1 3.5 6.8c0-1.7 1.4-3.2 3.1-3.3z" fill="#E8336D"/></svg></span><span><b>โทร 062-569-1900</b><span>โทรสอบถามหรือนัดฉีด</span></span><svg class="arr" viewBox="0 0 20 20" aria-hidden="true"><path d="M7 4l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+          <a class="cbtn" href="https://line.me/R/ti/p/@jirayusclinic" target="_blank" rel="noopener"><span class="ic" style="--ib:#DDF5E7"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3C6.5 3 2 6.6 2 11c0 3.9 3.5 7.2 8.3 7.9.6.1.6.5.5 1.1l-.2 1.3c0 .4.2.7.7.4 3.5-1.9 8.7-5.6 8.7-10.7C20 6.6 17.5 3 12 3z" fill="#05A24A"/></svg></span><span><b>LINE @jirayusclinic</b><span>ทักแชตเพื่อนัดฉีดวัคซีน</span></span><svg class="arr" viewBox="0 0 20 20" aria-hidden="true"><path d="M7 4l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+          <a class="cbtn" href="https://www.google.com/maps/search/?api=1&query=%E0%B8%84%E0%B8%A5%E0%B8%B4%E0%B8%99%E0%B8%B4%E0%B8%81%E0%B9%80%E0%B8%94%E0%B9%87%E0%B8%81%E0%B8%AB%E0%B8%A1%E0%B8%AD%E0%B8%88%E0%B8%B4%E0%B8%A3%E0%B8%B2%E0%B8%A2%E0%B8%B8%E0%B8%AA%20%E0%B9%80%E0%B8%A7%E0%B8%B5%E0%B8%A2%E0%B8%87%E0%B8%AA%E0%B8%A3%E0%B8%B0" target="_blank" rel="noopener"><span class="ic" style="--ib:#DDEFFF"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 22s7-6.6 7-12.2A7 7 0 0 0 5 9.8C5 15.4 12 22 12 22z" fill="#339BE6"/><circle cx="12" cy="9.8" r="2.7" fill="#fff"/></svg></span><span><b>แผนที่</b><span>ข้างธนาคารกสิกรไทย เวียงสระ</span></span><svg class="arr" viewBox="0 0 20 20" aria-hidden="true"><path d="M7 4l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+        </div>
+      </div>
+      <div class="slogans">
+        <div class="hearts" id="hearts" aria-hidden="true"></div>
+        <div class="doc-ava" aria-hidden="true"><svg viewBox="0 0 120 120" aria-hidden="true"><circle cx="60" cy="60" r="60" fill="#DDF4EA"/><path d="M17 130 C19 97 37 82 60 82 C83 82 101 97 103 130 Z" fill="#fff" stroke="#1B2A5E" stroke-width="3.2" stroke-linejoin="round"/><path d="M49 83 L60 100 L71 83 Z" fill="#8FD3FF" stroke="#1B2A5E" stroke-width="3" stroke-linejoin="round"/><path d="M46.5 84 L57 114 M73.5 84 L63 114" fill="none" stroke="#1B2A5E" stroke-width="3" stroke-linecap="round"/><path d="M43 87 C38 103 45 112 55 111" fill="none" stroke="#E8336D" stroke-width="3.6" stroke-linecap="round"/><path d="M77 87 C83 99 81 105 77 107" fill="none" stroke="#E8336D" stroke-width="3.6" stroke-linecap="round"/><circle cx="76" cy="109" r="5.2" fill="#FFCF3F" stroke="#1B2A5E" stroke-width="2.6"/><rect x="82" y="93" width="10" height="12" rx="2.5" fill="#FFE4EE" stroke="#1B2A5E" stroke-width="2.4"/><path d="M87 89v6" stroke="#339BE6" stroke-width="2.6" stroke-linecap="round"/><circle cx="35.5" cy="55" r="6" fill="#FDE3D0" stroke="#1B2A5E" stroke-width="3"/><circle cx="84.5" cy="55" r="6" fill="#FDE3D0" stroke="#1B2A5E" stroke-width="3"/><circle cx="60" cy="53" r="25" fill="#FDE3D0" stroke="#1B2A5E" stroke-width="3.2"/><path d="M35 52 C33 32 48 25 61 26 C76 26 88 36 85 53 C80 42 70 37 58 39 C50 40 41 44 35 52 Z" fill="#1B2A5E"/><circle cx="50" cy="56" r="7.6" fill="#fff" fill-opacity=".45" stroke="#1B2A5E" stroke-width="2.6"/><circle cx="70" cy="56" r="7.6" fill="#fff" fill-opacity=".45" stroke="#1B2A5E" stroke-width="2.6"/><path d="M57.6 56h4.8" stroke="#1B2A5E" stroke-width="2.6"/><circle cx="50" cy="57" r="2.4" fill="#1B2A5E"/><circle cx="70" cy="57" r="2.4" fill="#1B2A5E"/><ellipse cx="42.5" cy="66" rx="5" ry="3.2" fill="#F7A1BF" opacity=".85"/><ellipse cx="77.5" cy="66" rx="5" ry="3.2" fill="#F7A1BF" opacity=".85"/><path d="M53 67.5 Q60 74.5 67 67.5" fill="none" stroke="#1B2A5E" stroke-width="3" stroke-linecap="round"/></svg></div>
+        <p>วัคซีนวันนี้... เพื่ออนาคตที่แข็งแรงของลูก</p>
+        <p>รับฟังด้วยความเข้าใจ ใส่ใจทุกการเติบโต</p>
+      </div>
+    </div>
+    <div class="disclaim">
+      <p class="warn"><b>ทดลองใช้เบื้องต้น</b> · ข้อมูลเพื่อความรู้ทั่วไป ไม่ใช้แทนการตรวจและคำแนะนำจากแพทย์ โปรดปรึกษาแพทย์เพื่อยืนยันความถูกต้องอีกครั้ง</p>
+      <p><b>ที่มา:</b> Wanatpreeya Phongsamart et al. Serotype distribution of <i>S. pneumoniae</i> causing IPD in children ≤ 5 years, BKK and countrywide, 2017 – Sep 2025. 14th World Congress of the World Society for Pediatric Infectious Diseases (WSPID 2025), 28–31 October 2025, Bangkok, Thailand. · <span class="nw">องค์ประกอบ</span>สายพันธุ์ตามข้อมูลผลิตภัณฑ์</p>
+    </div>
+  </section>
+</main>
+<footer>© คลินิกเด็กหมอจิรายุส เวียงสระ · โทร 062-569-1900 · LINE @jirayusclinic</footer>
+</div>
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+<script>
+/* PCV dose calculator logic — pure functions, no DOM. */
+(function (root) {
+  'use strict';
+  var TH_MON = ['ม.ค.', 'ก.พ.', 'มี.ค.', 'เม.ย.', 'พ.ค.', 'มิ.ย.', 'ก.ค.', 'ส.ค.', 'ก.ย.', 'ต.ค.', 'พ.ย.', 'ธ.ค.'];
+  var W8 = 56 / 30.4375; // 8 weeks expressed in months
+
+  /* ---------- dates (Bangkok calendar, stored as UTC-midnight) ---------- */
+  function thaiToday(nowMs) {
+    var d = new Date((nowMs == null ? Date.now() : nowMs) + 7 * 3600e3);
+    return new Date(Date.UTC(d.getUTCFullYear(), d.getUTCMonth(), d.getUTCDate()));
+  }
+  function addDays(d, n) { return new Date(d.getTime() + n * 864e5); }
+  function addMonths(d, m) {
+    var y = d.getUTCFullYear(), mo = d.getUTCMonth() + m, day = d.getUTCDate();
+    var last = new Date(Date.UTC(y, mo + 1, 0)).getUTCDate();
+    return new Date(Date.UTC(y, mo, Math.min(day, last)));
+  }
+  function fmtThaiDate(d) {
+    return d.getUTCDate() + ' ' + TH_MON[d.getUTCMonth()] + ' ' + String((d.getUTCFullYear() + 543) % 100).padStart(2, '0');
+  }
+  function fmtAge(m) {
+    m = Math.round(m);
+    if (m < 12) return m + ' เดือน';
+    var y = Math.floor(m / 12), r = m % 12;
+    return r === 0 ? y + ' ปี' : y + ' ปี ' + r + ' เดือน';
+  }
+  function fmtAgeShort(m) {
+    var approx = Math.abs(m - Math.round(m)) > 0.01;
+    m = Math.round(m);
+    var s;
+    if (m < 12) s = m + ' ด.';
+    else { var y = Math.floor(m / 12), r = m % 12; s = r === 0 ? y + ' ปี' : y + ' ปี ' + r + ' ด.'; }
+    return (approx ? '≈ ' : '') + s;
+  }
+
+  /* ---------- groups ---------- */
+  function ageGroup(A, risk) {
+    if (A < 2) return { key: 'pre', color: 'pink', label: 'ต่ำกว่า 2 เดือน' };
+    if (A <= 6) return { key: 'g1', color: 'pink', label: '2–6 เดือน' };
+    if (A <= 11) return { key: 'g2', color: 'orange', label: '7–11 เดือน' };
+    if (A <= 23) return { key: 'g3', color: 'green', label: '12–23 เดือน' };
+    if (risk) return A >= 72
+      ? { key: 'r6', color: 'purple', label: 'กลุ่มเสี่ยง 6 ปีขึ้นไป' }
+      : { key: 'r2', color: 'purple', label: 'กลุ่มเสี่ยง 2–6 ปี' };
+    return A >= 72
+      ? { key: 'g5', color: 'blue', label: '6 ปีขึ้นไป' }
+      : { key: 'g4', color: 'blue', label: '2–5 ปี' };
+  }
+
+  /* ---------- plans from the clinic's tables ---------- */
+  // gap: '2m' = "ห่างกัน 4–8 สัปดาห์" (นับ 2 เดือน) · '8w' = "ห่างกัน 8 สัปดาห์"
+  function clinicPlan(A, risk) {
+    var a = A < 2 ? 2 : A;
+    if (a <= 6) return { primary: 3, gap: '2m', booster: { at: 12, range: '12–15 เดือน', max: 15 },
+      summary: 'ฉีด 3 ครั้ง ห่างกัน 4–8 สัปดาห์ แล้วกระตุ้นอีก 1 ครั้งตอนอายุ 12–15 เดือน' };
+    if (a <= 11) return { primary: 2, gap: '2m', booster: { at: 12, range: '12–15 เดือน', max: 15 },
+      summary: 'ฉีด 2 ครั้ง ห่างกัน 4–8 สัปดาห์ แล้วกระตุ้น 1 ครั้งตอนอายุ 12–15 เดือน (ห่างเข็มก่อนอย่างน้อย 8 สัปดาห์)' };
+    if (a <= 23) return { primary: 2, gap: '8w', booster: null,
+      summary: 'ฉีด 2 ครั้ง ห่างกัน 8 สัปดาห์ ไม่ต้องฉีดกระตุ้น' };
+    if (a < 72) return risk
+      ? { primary: 2, gap: '8w', booster: null, summary: 'กลุ่มเสี่ยง ฉีด 2 ครั้ง ห่างกัน 8 สัปดาห์ ไม่ต้องฉีดกระตุ้น' }
+      : { primary: 1, gap: null, booster: null, summary: 'ฉีด 1 ครั้ง ไม่ต้องฉีดกระตุ้น' };
+    return risk
+      ? { primary: 1, gap: null, booster: null, summary: 'กลุ่มเสี่ยง ฉีด 1 ครั้ง ไม่ต้องฉีดกระตุ้น' }
+      : { status: 'notindicated', summary: 'ตารางไม่ได้ระบุการฉีดสำหรับเด็กปกติอายุ 6 ปีขึ้นไป · ปรึกษาแพทย์เพื่อประเมินเป็นรายคน' };
+  }
+  function freePlan(A, risk) {
+    var a = A < 2 ? 2 : A;
+    if (a <= 6) return risk
+      ? { primary: 3, gap: '8w', booster: { at: 12, range: '12 เดือน', max: 12 },
+          summary: 'กลุ่มเสี่ยง ฉีด 3 ครั้ง ห่างกัน 8 สัปดาห์ แล้วกระตุ้น 1 ครั้งตอนอายุ 12 เดือน' }
+      : { primary: 2, gap: '8w', booster: { at: 12, range: '12 เดือน', max: 12 },
+          summary: 'ฉีด 2 ครั้ง ห่างกัน 8 สัปดาห์ แล้วกระตุ้น 1 ครั้งตอนอายุ 12 เดือน' };
+    if (a <= 11) return risk
+      ? { primary: 3, gap: '2m', booster: { at: 12, range: '12–15 เดือน', max: 15 },
+          summary: 'กลุ่มเสี่ยง ฉีด 3 ครั้ง ห่างกัน 4–8 สัปดาห์ แล้วกระตุ้น 1 ครั้งตอนอายุ 12–15 เดือน' }
+      : { primary: 2, gap: '2m', booster: { at: 12, range: '12–15 เดือน', max: 15 },
+          summary: 'ฉีด 2 ครั้ง ห่างกัน 4–8 สัปดาห์ แล้วกระตุ้น 1 ครั้งตอนอายุ 12–15 เดือน' };
+    if (a <= 23) return { primary: 2, gap: '8w', booster: null,
+      summary: 'ฉีด 2 ครั้ง ห่างกัน 8 สัปดาห์ ไม่ต้องฉีดกระตุ้น' };
+    return { status: 'notcovered', summary: 'ไม่ครอบคลุมช่วงอายุนี้ (PCV10 ฉีดได้ถึงอายุ 2 ปี) · พิจารณาวัคซีนทางเลือกตัวอื่น' };
+  }
+
+  /* ---------- turn a plan into dated doses ---------- */
+  function buildDoses(plan, A, today) {
+    var offset = A < 2 ? 2 - A : 0;      // under 2 months: example starts when baby turns 2 months
+    var date = addMonths(today, offset), age = A + offset, doses = [], notes = [];
+    for (var i = 0; i < plan.primary; i++) {
+      var gapLabel = null;
+      if (i > 0) {
+        if (plan.gap === '2m') { date = addMonths(date, 2); age += 2; gapLabel = '+2 เดือน (ห่าง 4–8 สัปดาห์)'; }
+        else { date = addDays(date, 56); age += W8; gapLabel = '+8 สัปดาห์'; }
+      }
+      doses.push({ n: i + 1, kind: 'primary', age: age, date: date, gap: gapLabel });
+    }
+    if (plan.booster) {
+      var b = plan.booster;
+      var turn = addMonths(today, b.at - A);   // date the child reaches the booster age
+      var minD = addMonths(date, 2);           // ≥ 8 weeks after previous dose (นับ 2 เดือน)
+      var bDate, bAge, bGap;
+      if (turn.getTime() >= minD.getTime()) { bDate = turn; bAge = b.at; bGap = 'กระตุ้นตอนอายุ ' + b.range; }
+      else { bDate = minD; bAge = age + 2; bGap = 'กระตุ้น · ห่างเข็มก่อน ≥ 8 สัปดาห์'; }
+      doses.push({ n: plan.primary + 1, kind: 'booster', age: bAge, date: bDate, gap: bGap });
+      if (Math.round(bAge) > b.max) {
+        notes.push('เข็มกระตุ้นเลยช่วง ' + b.range + ' (อายุ ' + fmtAge(bAge) + ') เพราะต้องห่างเข็มก่อนอย่างน้อย 8 สัปดาห์ แพทย์จะปรับวันนัดให้เหมาะสม');
+      }
+    }
+    return { doses: doses, notes: notes };
+  }
+
+  function speechFor(g, risk) {
+    switch (g.key) {
+      case 'pre': return 'น้องยังเล็กอยู่ครับ เข็มแรกเริ่มได้ตั้งแต่อายุ 6 สัปดาห์ หมอทำตารางตัวอย่างแบบเริ่มตอน 2 เดือนไว้ให้แล้ว';
+      case 'g1': return risk ? 'น้องกลุ่มเสี่ยง ฉีดแบบ 3+1 เข็มทั้งวัคซีนคลินิกและวัคซีนฟรีครับ หมอจะดูโรคประจำตัวร่วมด้วย'
+        : 'วัยนี้เหมาะที่สุดที่จะเริ่มครับ! วัคซีนฟรี 2+1 เข็ม หรือวัคซีนทางเลือก 3+1 เข็ม';
+      case 'g2': return risk ? 'กลุ่มเสี่ยงวัยนี้ วัคซีนคลินิก 2+1 เข็ม ส่วนวัคซีนฟรี 3+1 เข็มครับ'
+        : 'เริ่มช้าหน่อยไม่เป็นไรครับ ฉีด 2 เข็ม แล้วกระตุ้นอีก 1 เข็มหลังขวบ';
+      case 'g3': return 'ขวบกว่าแล้ว ฉีด 2 เข็มห่างกัน 8 สัปดาห์ก็ครบ ไม่ต้องกระตุ้นครับ';
+      case 'g4': return 'อายุ 2 ขวบขึ้นไป วัคซีนทางเลือกเข็มเดียวครับ ส่วนวัคซีนฟรีไม่ครอบคลุมช่วงอายุนี้แล้ว';
+      case 'r2': return 'กลุ่มเสี่ยงอายุ 2–6 ปี แนะนำ 2 เข็ม ห่างกัน 8 สัปดาห์ครับ';
+      case 'r6': return 'กลุ่มเสี่ยงอายุ 6 ปีขึ้นไป ฉีด 1 เข็มครับ หมอจะช่วยเลือกชนิดวัคซีนให้';
+      default: return 'เด็กปกติอายุ 6 ปีขึ้นไปไม่อยู่ในตารางนี้ครับ แวะมาคุยกับหมอเพื่อประเมินเป็นรายคนนะครับ';
+    }
+  }
+
+  function boxFrom(plan, A, today, vaccines) {
+    if (plan.status) return { status: plan.status, big: '–', primary: 0, booster: 0, summary: plan.summary, doses: [], notes: [], vaccines: vaccines };
+    var built = buildDoses(plan, A, today);
+    var bo = plan.booster ? 1 : 0;
+    return {
+      status: 'ok', primary: plan.primary, booster: bo,
+      big: bo ? plan.primary + ' + ' + bo : String(plan.primary),
+      summary: plan.summary, doses: built.doses, notes: built.notes, vaccines: vaccines
+    };
+  }
+
+  function compute(A, risk, nowMs) {
+    A = Math.max(0, Math.min(72, Math.round(A)));
+    risk = !!risk;
+    var today = thaiToday(nowMs);
+    var g = ageGroup(A, risk);
+    var clinic = boxFrom(clinicPlan(A, risk), A, today, A >= 24 ? 'PCV13 / PCV15 / PCV20' : 'PCV13 / PCV20');
+    var free = boxFrom(freePlan(A, risk), A, today, 'PCV10 (Pneumosil)');
+    var preview = A < 2;
+    if (preview) {
+      var start = addMonths(today, 2 - A);
+      var pn = 'ยังไม่ถึงวัย · เริ่มได้ตั้งแต่อายุ 6 สัปดาห์ — ตัวอย่างนี้เริ่มเข็มแรกตอนอายุ 2 เดือน (≈ ' + fmtThaiDate(start) + ')';
+      clinic.notes.unshift(pn); free.notes.unshift(pn);
+    }
+    return { age: A, risk: risk, today: today, group: g, preview: preview, clinic: clinic, free: free, speech: speechFor(g, risk) };
+  }
+
+  function summaryText(r) {
+    var L = [];
+    L.push('สรุปวัคซีนปอดอักเสบ IPD (PCV)');
+    L.push('คลินิกเด็กหมอจิรายุส เวียงสระ');
+    L.push('อายุเริ่มฉีด: ' + fmtAge(r.age) + ' · ' + (r.risk ? 'กลุ่มเสี่ยง' : 'เด็กปกติ (ไม่มีภาวะเสี่ยง)'));
+    if (r.preview) L.push('(ยังไม่ถึงวัย — ตัวอย่างเมื่อเริ่มตอนอายุ 2 เดือน)');
+    function box(title, b) {
+      L.push('');
+      L.push('▶ ' + title + ' — ' + b.vaccines);
+      if (b.status !== 'ok') { L.push('  ' + b.summary); return; }
+      L.push('  ' + b.big + ' เข็ม: ' + b.summary);
+      b.doses.forEach(function (d) {
+        L.push('  ' + (d.kind === 'booster' ? 'กระตุ้น' : 'เข็มที่ ' + d.n) + ': ≈ ' + fmtThaiDate(d.date) + ' (อายุ ' + fmtAgeShort(d.age).replace('≈ ', '~') + ')');
+      });
+      b.notes.filter(function (n) { return n.indexOf('ยังไม่ถึงวัย') !== 0; }).forEach(function (n) { L.push('  * ' + n); });
+    }
+    box('วัคซีนทางเลือกที่คลินิก', r.clinic);
+    box('วัคซีนฟรีของรัฐ', r.free);
+    L.push('');
+    L.push('* เป็นแนวทางทั่วไป แพทย์จะยืนยันจำนวนเข็มและวันนัดอีกครั้ง');
+    L.push('โทร 062-569-1900 · LINE @jirayusclinic');
+    return L.join('\n');
+  }
+
+  var api = { compute: compute, summaryText: summaryText, fmtThaiDate: fmtThaiDate, fmtAge: fmtAge, fmtAgeShort: fmtAgeShort,
+    thaiToday: thaiToday, addMonths: addMonths, addDays: addDays, ageGroup: ageGroup };
+  if (typeof module !== 'undefined' && module.exports) module.exports = api; else root.PCV = api;
+})(this);
+
+</script>
+<script>
+(function () {
+  'use strict';
+  var P = window.PCV;
+  var RM = !!(window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches);
+  function $(s, r) { return (r || document).querySelector(s); }
+  function $$(s, r) { return Array.prototype.slice.call((r || document).querySelectorAll(s)); }
+  function esc(s) { return String(s).replace(/[&<>"]/g, function (c) { return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]; }); }
+  function bump(e, cls) { if (!e) return; cls = cls || 'bump'; e.classList.remove(cls); void e.offsetWidth; e.classList.add(cls); }
+
+  /* ================= particles ================= */
+  var fx = $('#fx');
+  var SHAPE = {
+    star: '<svg viewBox="0 0 24 24"><path d="M12 1.8l2.9 6.4 7 .7-5.2 4.7 1.5 6.9L12 17 5.8 20.5l1.5-6.9L2.1 8.9l7-.7z"/></svg>',
+    heart: '<svg viewBox="0 0 24 24"><path d="M12 21.2S3.3 15.9 1.6 10.4C.4 6.6 2.7 3.3 6.3 3.3c2.4 0 4 1.4 5.7 3.3 1.7-1.9 3.3-3.3 5.7-3.3 3.6 0 5.9 3.3 4.7 7.1C20.7 15.9 12 21.2 12 21.2z"/></svg>',
+    dot: '<svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/></svg>'
+  };
+  var COLORS = ['#E8336D', '#FFCF3F', '#59C3F5', '#9061E0', '#2DB36F', '#FF8FB1'];
+  function burst(x, y, o) {
+    if (RM || !fx || !fx.animate) return;
+    o = o || {};
+    var n = o.n || 16, kinds = o.kinds || ['star', 'heart', 'dot'], spread = o.spread || 110, cols = o.colors || COLORS, base = o.size || 16;
+    for (var i = 0; i < n; i++) {
+      var k = kinds[i % kinds.length], sz = base * (0.6 + Math.random() * 0.8);
+      var s = document.createElement('span');
+      s.className = 'pt'; s.innerHTML = SHAPE[k];
+      s.style.cssText = 'left:' + (x - sz / 2) + 'px;top:' + (y - sz / 2) + 'px;width:' + sz + 'px;height:' + sz + 'px;color:' + cols[(Math.random() * cols.length) | 0];
+      fx.appendChild(s);
+      var a = Math.random() * Math.PI * 2, d = spread * (0.45 + Math.random() * 0.75);
+      var dx = Math.cos(a) * d, dy = Math.sin(a) * d - (o.lift || 24), rot = (Math.random() * 2 - 1) * 200;
+      var an = s.animate([
+        { transform: 'translate(0,0) scale(.2)', opacity: 1 },
+        { transform: 'translate(' + dx + 'px,' + dy + 'px) rotate(' + rot + 'deg) scale(1)', opacity: 1, offset: 0.65 },
+        { transform: 'translate(' + dx + 'px,' + (dy + 34) + 'px) rotate(' + (rot * 1.3) + 'deg) scale(.7)', opacity: 0 }
+      ], { duration: 900 + Math.random() * 600, easing: 'cubic-bezier(.15,.7,.3,1)' });
+      an.onfinish = (function (el) { return function () { el.remove(); }; })(s);
+    }
+  }
+  function burstAt(el, o) { if (!el) return; var r = el.getBoundingClientRect(); burst(r.left + r.width / 2, r.top + r.height / 2, o); }
+  function fireworks(el) {
+    if (RM || !el) return;
+    var r = el.getBoundingClientRect();
+    for (var i = 0; i < 5; i++) (function (i) {
+      setTimeout(function () {
+        burst(r.left + r.width * (0.15 + Math.random() * 0.7), r.top + Math.min(r.height, 260) * (0.1 + Math.random() * 0.5), { n: 18, kinds: ['star', 'dot', 'heart'], spread: 95 });
+      }, i * 200);
+    })(i);
+  }
+
+  var toastEl = $('#toast'), toastT;
+  function toast(msg) { toastEl.textContent = msg; toastEl.classList.add('show'); clearTimeout(toastT); toastT = setTimeout(function () { toastEl.classList.remove('show'); }, 2600); }
+
+  /* ================= replay-on-view (content is always visible at rest) ================= */
+  function fmtN(v, dec) { return dec ? v.toFixed(dec) : String(Math.round(v)); }
+  function countUp(e) {
+    var to = parseFloat(e.getAttribute('data-count')), dec = +(e.getAttribute('data-dec') || 0), suf = e.getAttribute('data-suf') || '';
+    if (RM || !to) { e.textContent = fmtN(to, dec) + suf; return; }
+    var t0 = performance.now(), dur = 1100;
+    (function step(t) {
+      var p = Math.min(1, (t - t0) / dur), v = to * (1 - Math.pow(1 - p, 3));
+      e.textContent = fmtN(v, dec) + suf;
+      if (p < 1) requestAnimationFrame(step);
+    })(t0);
+  }
+  function replay(t) {
+    t.classList.remove('play'); void t.offsetWidth; t.classList.add('play');
+    $$('[data-count]', t).forEach(countUp);
+    if (t._onplay) t._onplay();
+  }
+  var io = ('IntersectionObserver' in window) ? new IntersectionObserver(function (es) {
+    es.forEach(function (en) {
+      var t = en.target;
+      if (en.isIntersecting && en.intersectionRatio >= 0.12) { if (!t._seen) { t._seen = true; replay(t); } }
+      else if (!en.isIntersecting) { t._seen = false; }
+    });
+  }, { threshold: [0, 0.12, 0.3] }) : null;
+  function watch(t) { if (io && t) io.observe(t); }
+
+  /* ================= clinic hours (Thai time) ================= */
+  var HOURS = { 0: [9, 16], 1: [17, 20], 2: [17, 20], 3: [17, 20], 4: [17, 20], 5: [17, 20], 6: [9, 12] };
+  var DNAME = ['อาทิตย์', 'จันทร์', 'อังคาร', 'พุธ', 'พฤหัสบดี', 'ศุกร์', 'เสาร์'];
+  function p2(n) { return (n < 10 ? '0' : '') + n; }
+  function clinicStatus(now) {
+    var t = new Date(now + 7 * 36e5), d = t.getUTCDay(), hr = t.getUTCHours() + t.getUTCMinutes() / 60, H = HOURS[d];
+    if (hr >= H[0] && hr < H[1]) return { open: true, text: 'เปิดอยู่ · ปิด ' + p2(H[1]) + '.00 น.', dow: d };
+    if (hr < H[0]) return { open: false, text: 'ปิดอยู่ · เปิดวันนี้ ' + p2(H[0]) + '.00 น.', dow: d };
+    var n = (d + 1) % 7;
+    return { open: false, text: 'ปิดอยู่ · เปิดพรุ่งนี้ (' + DNAME[n] + ') ' + p2(HOURS[n][0]) + '.00 น.', dow: d };
+  }
+  function paintStatus() {
+    var s = clinicStatus(Date.now());
+    $$('.open-pill').forEach(function (e) { e.textContent = s.text; e.classList.toggle('closed', !s.open); });
+    var key = s.dow === 0 ? 'sun' : s.dow === 6 ? 'sat' : 'wk';
+    $$('.hours li').forEach(function (li) { li.classList.toggle('today', li.getAttribute('data-d') === key); });
+  }
+  paintStatus(); setInterval(paintStatus, 30000);
+
+  /* ================= nav chips ================= */
+  var topbar = $('.topbar'), nav = $('#chips'), chips = $$('.chip', nav);
+  function goTo(id) {
+    var t = document.getElementById(id); if (!t) return;
+    t.scrollIntoView({ behavior: RM ? 'auto' : 'smooth', block: 'start' });
+  }
+  $$('a.chip, a.jump').forEach(function (a) {
+    a.addEventListener('click', function (e) { e.preventDefault(); goTo(a.getAttribute('href').slice(1)); });
+  });
+  $('#toTop').addEventListener('click', function () { window.scrollTo({ top: 0, behavior: RM ? 'auto' : 'smooth' }); });
+  var ticking = false;
+  function updateActive() {
+    ticking = false;
+    var y = topbar.offsetHeight + 40, cur = null;
+    chips.forEach(function (c) { var t = document.getElementById(c.getAttribute('href').slice(1)); if (t && t.getBoundingClientRect().top - y <= 0) cur = c; });
+    if (window.innerHeight + window.pageYOffset >= document.documentElement.scrollHeight - 4) cur = chips[chips.length - 1];
+    chips.forEach(function (c) {
+      var on = c === cur;
+      if (c.classList.contains('on') !== on) {
+        c.classList.toggle('on', on);
+        if (on) {
+          c.setAttribute('aria-current', 'true');
+          var left = c.offsetLeft - nav.clientWidth / 2 + c.offsetWidth / 2;
+          if (nav.scrollTo) nav.scrollTo({ left: Math.max(0, left), behavior: RM ? 'auto' : 'smooth' }); else nav.scrollLeft = left;
+        } else c.removeAttribute('aria-current');
+      }
+    });
+  }
+  window.addEventListener('scroll', function () { if (!ticking) { ticking = true; requestAnimationFrame(updateActive); } }, { passive: true });
+  updateActive();
+
+  /* ================= germs ================= */
+  function germSVG(color) {
+    var N = 9, d = '', cx = 30, cy = 30;
+    function pt(r, a) { return (cx + r * Math.cos(a)).toFixed(1) + ' ' + (cy + r * Math.sin(a)).toFixed(1); }
+    for (var i = 0; i < N; i++) {
+      var a0 = i / N * Math.PI * 2 - Math.PI / 2, a1 = (i + 0.5) / N * Math.PI * 2 - Math.PI / 2, a2 = (i + 1) / N * Math.PI * 2 - Math.PI / 2;
+      if (i === 0) d += 'M' + pt(19.5, a0);
+      d += ' Q' + pt(29, a1) + ' ' + pt(19.5, a2);
+    }
+    d += 'Z';
+    return '<svg viewBox="0 0 60 60" aria-hidden="true"><path d="' + d + '" fill="' + color + '" stroke="#1B2A5E" stroke-width="3" stroke-linejoin="round"/>' +
+      '<g fill="none" stroke="#1B2A5E" stroke-width="3" stroke-linecap="round"><path d="M19.5 23.5l7.5 3.2"/><path d="M40.5 23.5l-7.5 3.2"/><path d="M23.5 41.5q6.5-5.5 13 0"/></g>' +
+      '<circle cx="24" cy="31.5" r="2.7" fill="#1B2A5E"/><circle cx="36" cy="31.5" r="2.7" fill="#1B2A5E"/></svg>';
+  }
+  var GERMS = [['14', '#8BD46E', 13, 15], ['19A', '#B993F2', 50, 8], ['12F', '#FFB35C', 87, 15], ['19F', '#6FD3C6', 90, 52], ['18C', '#FF94B8', 79, 88], ['1', '#A9DB6C', 21, 88], ['7F', '#7CC4F5', 10, 52]];
+  var arena = $('#arena'), killsEl = $('#kills'), praise = $('#praise'), kid = $('#kid'), kills = 0, alive = GERMS.length, rounds = 0;
+  var PRAISES = ['เก่งมาก! ปราบครบ 7 สายพันธุ์แล้ว', 'สุดยอด! ภูมิคุ้มกันแข็งแรงขึ้นอีกรอบ', 'ฮีโร่ตัวจริง! ปราบครบอีกรอบแล้ว', 'ปราบเก่งเหมือนวัคซีนเลย!'];
+  GERMS.forEach(function (g, i) {
+    var b = document.createElement('button');
+    b.type = 'button'; b.className = 'germ';
+    b.setAttribute('aria-label', 'ปราบเชื้อสายพันธุ์ ' + g[0]);
+    b.style.cssText = '--x:' + g[2] + '%;--y:' + g[3] + '%;--bd:' + (2.4 + (i % 4) * 0.45).toFixed(2) + 's;--bdl:-' + (i * 0.55).toFixed(2) + 's';
+    b.innerHTML = germSVG(g[1]) + '<span class="tag">' + g[0] + '</span>';
+    b.addEventListener('click', function () {
+      if (b.classList.contains('popped')) return;
+      burstAt(b, { n: 14, kinds: ['star', 'dot'], spread: 80, colors: ['#FFCF3F', '#E8336D', '#59C3F5', '#FFE88A'] });
+      b.classList.add('popped');
+      kills++; killsEl.textContent = kills; bump(killsEl); bump(kid, 'jig');
+      alive--;
+      if (alive === 0) roundDone();
+    });
+    arena.appendChild(b);
+  });
+  function roundDone() {
+    praise.textContent = PRAISES[rounds % PRAISES.length]; rounds++;
+    praise.classList.add('show');
+    fireworks(arena);
+    burstAt(kid, { n: 22, kinds: ['heart'], spread: 150, colors: ['#E8336D', '#FF8FB1', '#FFCF3F'] });
+    setTimeout(function () {
+      praise.classList.remove('show');
+      $$('.germ', arena).forEach(function (b, i) { setTimeout(function () { b.classList.remove('popped'); }, i * 140); });
+      alive = GERMS.length;
+    }, 2700);
+  }
+
+  /* ================= calculator ================= */
+  var RISKS = ['โรคหัวใจแต่กำเนิด/เรื้อรัง', 'โรคปอดเรื้อรัง (รวมหอบหืดที่ใช้สเตียรอยด์ขนาดสูง)', 'ไม่มีม้าม/ม้ามทำงานผิดปกติ', 'โรคเลือดบางชนิด เช่น ธาลัสซีเมียชนิดรุนแรง', 'ภูมิคุ้มกันบกพร่อง/HIV', 'ยากดภูมิ เคมีบำบัด ปลูกถ่ายอวัยวะ', 'โรคไตเรื้อรัง/เนโฟรติก', 'เบาหวาน', 'น้ำไขสันหลังรั่ว/ฝังประสาทหูเทียม', 'โรคตับเรื้อรัง'];
+  var state = { age: 2, risk: false, manual: false }, current = null, lastSig = null;
+  var range = $('#ageRange'), ageY = $('#ageY'), ageM = $('#ageM'), ageText = $('#ageText'), grpPill = $('#grpPill');
+  var riskWrap = $('#riskWrap'), segBtns = $$('.seg button'), quick = $$('.q');
+  for (var y = 0; y <= 6; y++) ageY.insertAdjacentHTML('beforeend', '<option value="' + y + '">' + y + ' ปี</option>');
+  for (var m = 0; m <= 11; m++) ageM.insertAdjacentHTML('beforeend', '<option value="' + m + '">' + m + ' เดือน</option>');
+  RISKS.forEach(function (t, i) {
+    riskWrap.insertAdjacentHTML('beforeend', '<label class="rk" for="rk' + i + '"><input type="checkbox" id="rk' + i + '" value="' + i + '"><span class="box" aria-hidden="true"></span><span>' + esc(t) + '</span></label>');
+  });
+  var riskBoxes = $$('input', riskWrap);
+
+  function ageLabel(a) { return a === 0 ? 'แรกเกิด (0 เดือน)' : P.fmtAge(a); }
+  function setGroupPill(el, g) { el.setAttribute('data-c', g.color); el.textContent = g.label; }
+
+  function syncInputs() {
+    var a = state.age;
+    range.value = a; range.setAttribute('aria-valuetext', ageLabel(a));
+    range.classList.toggle('risk', state.risk);
+    ageY.value = Math.floor(a / 12); ageM.value = a % 12;
+    $$('option', ageM).forEach(function (o) { o.disabled = (+ageY.value === 6 && +o.value > 0); });
+    ageText.textContent = ageLabel(a);
+    quick.forEach(function (q) { q.classList.toggle('on', +q.getAttribute('data-age') === a); });
+    segBtns.forEach(function (b) { b.setAttribute('aria-checked', String((b.getAttribute('data-risk') === '1') === state.risk)); });
+    riskBoxes.forEach(function (c) { c.parentNode.classList.toggle('on', c.checked); });
+  }
+
+  var SYR = function (color, i) {
+    return '<svg class="syr" style="--i:' + i + '" viewBox="0 0 64 24" aria-hidden="true"><rect class="liq" x="15.5" y="8" width="32" height="8" rx="1.5" fill="' + color + '"/>' +
+      '<g fill="none" stroke="#1B2A5E" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 6v12M3 12h11"/><rect x="14" y="6" width="35" height="12" rx="3"/><path d="M24 6v3.5M31.5 6v3.5M39 6v3.5"/><path d="M49 9.5h3.5v5H49M52.5 12H62"/></g></svg>';
+  };
+  var STAR = '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.5l2.8 6 6.6.7-4.9 4.5 1.4 6.5L12 16.9l-5.9 3.3 1.4-6.5L2.6 9.2l6.6-.7z" fill="#1B2A5E"/></svg>';
+  var XICON = '<svg viewBox="0 0 26 26" aria-hidden="true"><circle cx="13" cy="13" r="11" fill="none" stroke="currentColor" stroke-width="2.6"/><path d="M8.5 8.5l9 9M17.5 8.5l-9 9" stroke="currentColor" stroke-width="2.6" stroke-linecap="round"/></svg>';
+  var QICON = '<svg viewBox="0 0 26 26" aria-hidden="true"><circle cx="13" cy="13" r="11" fill="none" stroke="currentColor" stroke-width="2.6"/><path d="M10 10.2a3.2 3.2 0 1 1 4.4 3c-.9.4-1.4 1-1.4 2v.6" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/><circle cx="13" cy="19.3" r="1.5" fill="currentColor"/></svg>';
+
+  function paintBox(el, b, r, isFree) {
+    $('.res-vax', el).textContent = b.vaccines;
+    var pills = '<span class="gpill" data-c="' + r.group.color + '">' + esc(r.group.label) + '</span>';
+    if (r.risk && r.group.color !== 'purple') pills += '<span class="rpill">กลุ่มเสี่ยง</span>';
+    if (r.preview) pills += '<span class="xpill">ตัวอย่าง · เริ่มที่ 2 เดือน</span>';
+    $('.pills', el).innerHTML = pills;
+    var big = $('.big', el);
+    if (b.status === 'ok') {
+      big.innerHTML = '<span class="big-num" aria-label="' + b.primary + (b.booster ? ' บวก ' + b.booster : '') + ' เข็ม"><span>' + b.primary + '</span>' +
+        (b.booster ? '<span class="plus">+</span><span class="boo">' + b.booster + '</span>' : '') + '</span>' +
+        '<span class="big-unit">เข็ม<small>' + (b.booster ? 'เข็มหลัก + กระตุ้น' : 'ไม่ต้องฉีดกระตุ้น') + '</small></span>';
+    } else {
+      big.innerHTML = '<span class="na">' + (b.status === 'notcovered' ? XICON + 'ไม่ครอบคลุม' : QICON + 'ปรึกษาแพทย์') + '</span>';
+    }
+    var col = isFree ? '#2DB36F' : '#EC4F86';
+    $('.syrs', el).innerHTML = b.doses.map(function (d, i) { return SYR(d.kind === 'booster' ? '#FFCF3F' : col, i); }).join('');
+    $('.res-sum', el).textContent = b.summary;
+    var todayMs = r.today.getTime();
+    $('.tl', el).innerHTML = b.doses.map(function (d, i) {
+      var isToday = d.date.getTime() === todayMs;
+      return '<li class="tl-i' + (d.kind === 'booster' ? ' boo' : '') + '" style="--i:' + i + '">' +
+        '<span class="tl-dot">' + (d.kind === 'booster' ? STAR : d.n) + '</span><div>' +
+        '<div class="tl-t"><b>' + (d.kind === 'booster' ? 'เข็มกระตุ้น' : 'เข็มที่ ' + d.n) + '</b><span class="tl-age">อายุ ' + P.fmtAgeShort(d.age) + '</span></div>' +
+        '<span class="tl-date' + (isToday ? ' today' : '') + '">' + (isToday ? 'วันนี้ · ' : '≈ ') + P.fmtThaiDate(d.date) + '</span>' +
+        (d.gap ? '<span class="tl-gap">' + esc(d.gap) + '</span>' : (i === 0 && !r.preview ? '<span class="tl-gap">เริ่มเข็มแรก</span>' : '')) +
+        '</div></li>';
+    }).join('');
+    $('.notes', el).innerHTML = b.notes.map(function (n) { return '<li>' + esc(n) + '</li>'; }).join('');
+  }
+
+  var resWrap = $('#resWrap'), speech = $('#speech');
+  function render(mode) { // mode: 'quiet' (no anim) | 'live' (drag) | 'full'
+    syncInputs();
+    var r = P.compute(state.age, state.risk); current = r;
+    setGroupPill(grpPill, r.group);
+    paintBox($('#resClinic'), r.clinic, r, false);
+    paintBox($('#resFree'), r.free, r, true);
+    if (speech.textContent !== r.speech) { speech.textContent = r.speech; if (mode !== 'quiet') bump(speech, 'pop'); }
+    var sig = r.clinic.big + '|' + r.free.big + '|' + r.group.key + '|' + r.risk + '|' + r.clinic.notes.length + r.free.notes.length;
+    var changed = sig !== lastSig; lastSig = sig;
+    if (mode === 'full' || (mode === 'live' && changed)) {
+      replay(resWrap);
+      if (changed) $$('.big-num, .na', resWrap).forEach(function (e) { burstAt(e, { n: 14, kinds: ['heart', 'star'], spread: 100 }); });
+    }
+    var cb = $('#copyBox'); if (!cb.hidden) $('#copyText').value = P.summaryText(r);
+  }
+  function setAge(a, mode) { state.age = Math.max(0, Math.min(72, Math.round(a))); render(mode || 'full'); }
+  function setRisk(v, manual) { state.risk = !!v; if (manual !== undefined) state.manual = manual; render('full'); }
+
+  range.addEventListener('input', function () { setAge(+range.value, 'live'); });
+  range.addEventListener('change', function () { setAge(+range.value, 'full'); });
+  $('#minus').addEventListener('click', function () { setAge(state.age - 1); });
+  $('#plus').addEventListener('click', function () { setAge(state.age + 1); });
+  ageY.addEventListener('change', function () { setAge(+ageY.value * 12 + (+ageY.value === 6 ? 0 : +ageM.value)); });
+  ageM.addEventListener('change', function () { setAge(+ageY.value * 12 + +ageM.value); });
+  quick.forEach(function (q) { q.addEventListener('click', function () { setAge(+q.getAttribute('data-age')); }); });
+  segBtns.forEach(function (b) {
+    b.addEventListener('click', function () {
+      var v = b.getAttribute('data-risk') === '1';
+      if (!v) riskBoxes.forEach(function (c) { c.checked = false; });
+      setRisk(v, v);
+    });
+    b.addEventListener('keydown', function (e) {
+      if (e.key === 'ArrowRight' || e.key === 'ArrowLeft' || e.key === 'ArrowUp' || e.key === 'ArrowDown') {
+        e.preventDefault(); var other = segBtns[segBtns.indexOf(b) ^ 1]; other.focus(); other.click();
+      }
+    });
+  });
+  riskBoxes.forEach(function (c) {
+    c.addEventListener('change', function () {
+      var any = riskBoxes.some(function (x) { return x.checked; });
+      if (any) setRisk(true);
+      else if (!state.manual) setRisk(false);
+      else render('quiet');
+    });
+  });
+
+  /* copy summary */
+  function legacyCopy(txt) {
+    try {
+      var ta = document.createElement('textarea'); ta.value = txt; ta.setAttribute('readonly', '');
+      ta.style.cssText = 'position:fixed;top:0;left:0;opacity:0;pointer-events:none';
+      document.body.appendChild(ta); ta.select(); var ok = document.execCommand('copy'); ta.remove(); return !!ok;
+    } catch (e) { return false; }
+  }
+  var copyBtn = $('#copyBtn');
+  copyBtn.addEventListener('click', function () {
+    var txt = P.summaryText(current);
+    function ok() { $('#copyBox').hidden = true; toast('คัดลอกแล้ว · เปิด LINE แล้ววางได้เลย'); burstAt(copyBtn, { n: 10, kinds: ['heart', 'star'], spread: 70 }); }
+    function fail() { var cb = $('#copyBox'); cb.hidden = false; var ta = $('#copyText'); ta.value = txt; ta.focus(); ta.select(); toast('คัดลอกอัตโนมัติไม่ได้ · ใช้กล่องข้อความด้านล่าง'); }
+    try {
+      if (navigator.clipboard && navigator.clipboard.writeText) navigator.clipboard.writeText(txt).then(ok, function () { legacyCopy(txt) ? ok() : fail(); });
+      else legacyCopy(txt) ? ok() : fail();
+    } catch (e) { fail(); }
+  });
+
+  render('quiet');
+  watch(resWrap);
+
+  /* ================= vaccines & strains data ================= */
+  var ST = [['6B', 0.6, 6.6], ['9V', 0, 0.6], ['14', 13.1, 30.0], ['18C', 5.0, 10.1], ['19F', 9.0, 10.0], ['23F', 0, 0], ['1', 10.0, 0], ['5', 0.6, 4.2], ['7F', 4.2, 4.2], ['19A', 17.3, 15.0], ['22F', 0, 0], ['33F', 0, 0], ['8', 0.6, 0.6], ['10A', 0.6, 1.8], ['11A', 0, 0], ['12F', 10.1, 14.9], ['15B/C', 5.4, 10.0]];
+  var COMMON = ['14', '19A', '12F', '19F', '18C', '15B/C', '1', '7F', '5'];
+  var P13 = ['1', '3', '4', '5', '6A', '6B', '7F', '9V', '14', '18C', '19A', '19F', '23F'];
+  var VAX = [
+    { id: 'PCV10', sub: 'SII', age: '6 สัปดาห์ – 2 ปี', c: '#13957F', st: ['1', '5', '6A', '6B', '7F', '9V', '14', '19A', '19F', '23F'] },
+    { id: 'PCV13', sub: 'Biovalys, Pfizer', age: '6 สัปดาห์ – 6 ปี', c: '#2B85CF', st: P13 },
+    { id: 'PCV14', sub: '', age: '6 สัปดาห์ – 2 ปี', c: '#D96C0B', st: ['1', '3', '4', '5', '6B', '7F', '9V', '14', '18C', '19A', '19F', '22F', '23F', '33F'] },
+    { id: 'PCV15', sub: '', age: '≥ 6 สัปดาห์', c: '#8A5BDB', st: P13.concat(['22F', '33F']) },
+    { id: 'PCV20', sub: '', age: '≥ 6 สัปดาห์', c: '#E8336D', st: P13.concat(['8', '10A', '11A', '12F', '15B', '22F', '33F']) }
+  ];
+  function covers(v, s) { return v.st.indexOf(s === '15B/C' ? '15B' : s) >= 0; }
+  function commonOf(v) { return COMMON.filter(function (s) { return covers(v, s); }); }
+  function fmtV(v) { return v ? v.toFixed(1) : '0'; }
+
+  /* ---------- section 3: strain chart ---------- */
+  var rowsEl = $('#strainRows');
+  ST.forEach(function (s, i) {
+    var name = s[0], isCom = COMMON.indexOf(name) >= 0, isTop = name === '14';
+    var row = document.createElement('div');
+    row.className = 'srow'; row.setAttribute('role', 'button'); row.tabIndex = 0;
+    row.setAttribute('aria-expanded', 'false'); row.setAttribute('data-i', i);
+    row.setAttribute('aria-label', 'สายพันธุ์ ' + name + ' กรุงเทพฯ ' + fmtV(s[1]) + '% ทั่วประเทศ ' + fmtV(s[2]) + '%');
+    var badges = (isTop ? '<span class="bdg top">พบมากสุด</span>' : '') + (isCom ? '<span class="bdg com">พบบ่อย</span>' : '');
+    function bar(cls, v) {
+      return '<div class="bar ' + cls + '"><div class="track"><span class="fill" style="--w:' + (v / 30 * 100).toFixed(2) + '%;--i:' + i + '"></span></div>' +
+        '<span class="val" data-count="' + v + '" data-dec="' + (v ? 1 : 0) + '">' + fmtV(v) + '</span></div>';
+    }
+    var chipsHtml = VAX.map(function (v, k) {
+      var y = covers(v, name);
+      return '<span class="vchip ' + (y ? 'yes' : 'no') + '" style="--i:' + k + '">' + v.id + (y && name === '15B/C' ? ' (15B)' : '') + '</span>';
+    }).join('');
+    row.innerHTML = '<div class="s-lab"><span class="s-name">' + name + '</span>' + (badges ? '<span class="badges">' + badges + '</span>' : '') + '</div>' +
+      '<div class="s-bars">' + bar('bkk', s[1]) + bar('nat', s[2]) + '</div>' +
+      '<div class="s-cov"><p>วัคซีนที่มีสายพันธุ์ ' + name + ':</p>' + chipsHtml + '</div>';
+    function toggle() {
+      var open = !row.classList.contains('open');
+      row.classList.toggle('open', open); row.setAttribute('aria-expanded', String(open));
+    }
+    row.addEventListener('click', toggle);
+    row.addEventListener('keydown', function (e) { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); toggle(); } });
+    rowsEl.appendChild(row);
+  });
+  var firstRow = $('.srow[data-i="2"]', rowsEl); firstRow.classList.add('open'); firstRow.setAttribute('aria-expanded', 'true');
+  $$('.tg[data-sort]').forEach(function (b) {
+    b.addEventListener('click', function () {
+      $$('.tg[data-sort]').forEach(function (x) { x.setAttribute('aria-pressed', String(x === b)); });
+      var mode = b.getAttribute('data-sort'), rows = $$('.srow', rowsEl);
+      var first = new Map(); rows.forEach(function (r) { first.set(r, r.getBoundingClientRect().top); });
+      rows.sort(function (a, c) {
+        var A = ST[+a.getAttribute('data-i')], C = ST[+c.getAttribute('data-i')];
+        if (mode === 'nat') return (C[2] - A[2]) || (C[1] - A[1]);
+        if (mode === 'bkk') return (C[1] - A[1]) || (C[2] - A[2]);
+        return +a.getAttribute('data-i') - +c.getAttribute('data-i');
+      });
+      rows.forEach(function (r) { rowsEl.appendChild(r); });
+      if (!RM && rowsEl.animate) rows.forEach(function (r) {
+        var dy = first.get(r) - r.getBoundingClientRect().top;
+        if (Math.abs(dy) > 1) r.animate([{ transform: 'translateY(' + dy + 'px)' }, { transform: 'none' }], { duration: 600, easing: 'cubic-bezier(.2,.8,.2,1)' });
+      });
+    });
+  });
+  watch($('#strainChart'));
+
+  var gc = $('#germChips');
+  var GC = { '14': '#8BD46E', '19A': '#B993F2', '12F': '#FFB35C', '19F': '#6FD3C6', '18C': '#FF94B8', '15B/C': '#FFD84D', '1': '#A9DB6C', '7F': '#7CC4F5', '5': '#F59FD0' };
+  COMMON.forEach(function (s, i) { gc.insertAdjacentHTML('beforeend', '<span class="gchip" style="--i:' + i + '">' + germSVG(GC[s]) + s + '</span>'); });
+  watch(gc);
+
+  /* ---------- section 4: coverage ---------- */
+  var COVER = [['PCV20', 20, 79.8, 90.0], ['PCV13', 13, 66.7, 85.0, 'CRM197, TT'], ['PCV15', 15, 66.7, 85.0], ['PCV14', 14, 62.5, 85.0], ['PCV10', 10, 61.9, 75.0, 'CRM197']];
+  var CROWN = '<svg class="crown" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 18.5 4.6 7.5l4.9 4.6L12 4.5l2.5 7.6 4.9-4.6 1.6 11z" fill="#FFCF3F" stroke="#1B2A5E" stroke-width="1.7" stroke-linejoin="round"/><path d="M3.8 20.5h16.4" stroke="#1B2A5E" stroke-width="1.7" stroke-linecap="round"/></svg>';
+  var covRows = $('#covRows');
+  COVER.forEach(function (c, i) {
+    function bar(cls, v) {
+      return '<div class="bar ' + cls + '"><div class="track"><span class="fill" style="--w:' + v + '%;--i:' + (i * 2 + (cls === 'nat' ? 1 : 0)) + '"></span></div>' +
+        '<span class="val" data-count="' + v + '" data-dec="1" data-suf="%">' + v.toFixed(1) + '%</span></div>';
+    }
+    covRows.insertAdjacentHTML('beforeend', '<div class="crow' + (i === 0 ? ' top' : '') + '" aria-label="' + c[0] + ' กรุงเทพฯ ' + c[2] + '% ทั่วประเทศ ' + c[3] + '%">' +
+      '<div class="c-lab"><b>' + c[0] + (i === 0 ? CROWN : '') + '</b><small>' + c[1] + ' สายพันธุ์' + (c[4] ? ' · ' + c[4] : '') + '</small></div>' +
+      '<div class="s-bars">' + bar('bkk', c[2]) + bar('nat', c[3]) + '</div></div>');
+  });
+  watch($('#covChart'));
+
+  /* ---------- section 5: compare table ---------- */
+  var COLS = [{ g: '13 ตัวใน PCV13', cls: 'ga', s: P13 }, { g: '+22F, 33F', cls: 'gb', s: ['22F', '33F'] }, { g: 'เพิ่มเฉพาะ PCV20', cls: 'gc', s: ['8', '10A', '11A', '12F', '15B'] }];
+  var COMMON_COL = ['14', '19A', '12F', '19F', '18C', '15B', '1', '7F', '5'];
+  var vt = $('#vt'), allCols = [];
+  COLS.forEach(function (g) { allCols = allCols.concat(g.s); });
+  var th1 = '<tr class="grp"><th class="stick" rowspan="2" scope="col">วัคซีน</th>' + COLS.map(function (g) { return '<th class="' + g.cls + '" colspan="' + g.s.length + '" scope="colgroup">' + g.g + '</th>'; }).join('') + '<th class="sumh" rowspan="2" scope="col">รวม</th></tr>';
+  var th2 = '<tr class="sts">' + allCols.map(function (s) { return '<th scope="col"' + (COMMON_COL.indexOf(s) >= 0 ? ' class="com"' : '') + '>' + s + '</th>'; }).join('') + '</tr>';
+  var body = VAX.map(function (v, ri) {
+    var cn = commonOf(v).length;
+    return '<tr data-v="' + v.id + '" style="--vc:' + v.c + '"><th class="stick" scope="row"><button class="vbtn" type="button"><b>' + v.id + '</b><small>' + (v.sub ? v.sub + ' · ' : '') + v.age.replace(/(\d) /g, '$1\u00a0') + '</small></button></th>' +
+      allCols.map(function (s, ci) {
+        var has = v.st.indexOf(s) >= 0;
+        return '<td' + (COMMON_COL.indexOf(s) >= 0 ? ' class="com"' : '') + '>' + (has ? '<i class="dot" style="--i:' + (ci + ri * 3) + '" title="' + v.id + ' มี ' + s + '"></i><span class="vh">มี</span>' : '<i class="nodot"></i><span class="vh">ไม่มี</span>') + '</td>';
+      }).join('') +
+      '<td class="sum"><span class="sum-n">' + v.st.length + '<small>สายพันธุ์</small></span><span class="sum-c">สายพันธุ์เด่นในไทย <b>' + cn + '/9</b></span><span class="mini"><i style="--w:' + (cn / 9 * 100).toFixed(1) + '%"></i></span></td></tr>';
+  }).join('');
+  vt.innerHTML = '<thead>' + th1 + th2 + '</thead><tbody>' + body + '</tbody>';
+  var hlBtn = $('#hlToggle');
+  hlBtn.addEventListener('click', function () {
+    var on = hlBtn.getAttribute('aria-pressed') !== 'true';
+    hlBtn.setAttribute('aria-pressed', String(on)); vt.classList.toggle('hl', on);
+  });
+  var tblMsg = $('#tblMsg'), selV = null;
+  $$('tbody tr', vt).forEach(function (tr) {
+    $('.vbtn', tr).addEventListener('click', function () {
+      var id = tr.getAttribute('data-v');
+      if (selV === id) { selV = null; vt.classList.remove('has-sel'); tr.classList.remove('picked'); tblMsg.classList.remove('full'); tblMsg.textContent = 'แตะชื่อวัคซีนในตาราง เพื่อดูว่าครอบคลุมสายพันธุ์เด่นในไทยกี่ตัว'; return; }
+      selV = id; vt.classList.add('has-sel');
+      $$('tbody tr', vt).forEach(function (x) { x.classList.toggle('picked', x === tr); });
+      var v = VAX.filter(function (x) { return x.id === id; })[0], got = commonOf(v), miss = COMMON.filter(function (s) { return got.indexOf(s) < 0; });
+      var full = miss.length === 0;
+      tblMsg.classList.toggle('full', full);
+      tblMsg.innerHTML = '<b style="color:' + v.c + '">' + v.id + '</b> ครอบคลุม <b>' + v.st.length + ' สายพันธุ์</b> · สายพันธุ์เด่นในไทย <b>' + got.length + ' จาก 9</b>' +
+        (full ? ' ครบทุกตัว!' : ' (ไม่มี ' + miss.join(', ') + ')');
+      if (full) fireworks(tblMsg); else burstAt($('.vbtn b', tr), { n: 8, kinds: ['dot'], spread: 50, colors: [v.c, '#FFCF3F'] });
+    });
+  });
+  watch($('#vtWrap'));
+
+  /* ---------- section 6: schedule ---------- */
+  var SCHED = [
+    { c: 'pink', age: 2, risk: false, t: '2–6 เดือน', cl: ['3 + 1', 'ห่างกัน 4–8 สัปดาห์ · กระตุ้นอายุ 12–15 ด.'], fr: ['2 + 1', 'ห่างกัน 8 สัปดาห์ · กระตุ้นอายุ 12 ด. · กลุ่มเสี่ยง 3 + 1'] },
+    { c: 'orange', age: 7, risk: false, t: '7–11 เดือน', cl: ['2 + 1', 'ห่างกัน 4–8 สัปดาห์ · กระตุ้นอายุ 12–15 ด. (ห่างเข็มก่อน ≥ 8 สัปดาห์)'], fr: ['2 + 1', 'ห่างกัน 4–8 สัปดาห์ · กระตุ้นอายุ 12–15 ด. · กลุ่มเสี่ยง 3 + 1'] },
+    { c: 'green', age: 12, risk: false, t: '12–23 เดือน', cl: ['2', 'ห่างกัน 8 สัปดาห์ · ไม่ต้องกระตุ้น'], fr: ['2', 'ห่างกัน 8 สัปดาห์ · ไม่ต้องกระตุ้น'] },
+    { c: 'blue', age: 24, risk: false, t: '2–5 ปี (เด็กปกติ)', cl: ['1', 'PCV13 / PCV15 / PCV20 · ไม่ต้องกระตุ้น'], fr: ['–', 'ไม่ครอบคลุม · พิจารณาวัคซีนทางเลือกตัวอื่น'] },
+    { c: 'purple', age: 24, risk: true, t: 'เด็กกลุ่มเสี่ยง*', cl: ['2 / 1', '2–6 ปี: 2 ครั้ง ห่างกัน 8 สัปดาห์ · 6 ปีขึ้นไป: 1 ครั้ง'], fr: ['–', 'อายุ 2 ปีขึ้นไปไม่ครอบคลุม · พิจารณาวัคซีนทางเลือกตัวอื่น'] }
+  ];
+  var schedEl = $('#sched');
+  SCHED.forEach(function (s) {
+    var b = document.createElement('button');
+    b.type = 'button'; b.className = 's6'; b.setAttribute('data-c', s.c);
+    b.setAttribute('aria-label', s.t + ' · แตะเพื่อคำนวณ');
+    b.innerHTML = '<span class="s6-age"><span>' + s.t + '</span><span class="s6-go">คำนวณ<svg width="14" height="14" viewBox="0 0 20 20" aria-hidden="true"><path d="M10 16V4M4.5 9.5 10 4l5.5 5.5" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg></span></span>' +
+      '<span class="s6-col"><small>คลินิก (PCV13 / PCV20)</small><b>' + s.cl[0] + '</b><span>' + s.cl[1] + '</span></span>' +
+      '<span class="s6-col"><small>ฟรี (PCV10)</small><b>' + s.fr[0] + '</b><span>' + s.fr[1] + '</span></span>';
+    b.addEventListener('click', function () {
+      riskBoxes.forEach(function (c) { c.checked = false; });
+      state.risk = s.risk; state.manual = s.risk; state.age = s.age;
+      lastSig = null;
+      goTo('calc');
+      render('quiet');
+      setTimeout(function () { render('full'); }, RM ? 0 : 650);
+      toast('ตั้งอายุ ' + ageLabel(s.age) + (s.risk ? ' · กลุ่มเสี่ยง' : '') + ' ให้แล้ว');
+    });
+    schedEl.appendChild(b);
+  });
+
+  /* ---------- hero & free & hearts ---------- */
+  watch($('#hero')); watch($('#freeCard')); watch($('.benefits'));
+  var hearts = $('#hearts'), HC = ['#E8336D', '#FF8FB1', '#FFCF3F', '#F7A1BF'];
+  for (var i = 0; i < 9; i++) {
+    hearts.insertAdjacentHTML('beforeend', '<span class="fh" style="--x:' + (6 + i * 10.5) + '%;--s:' + (12 + (i % 3) * 6) + 'px;--c:' + HC[i % 4] + ';--d:' + (4.2 + (i % 4) * 0.9).toFixed(1) + 's;--dl:-' + (i * 0.7).toFixed(1) + 's">' + SHAPE.heart + '</span>');
+  }
+})();
+
+</script>
+</body>
+</html>
