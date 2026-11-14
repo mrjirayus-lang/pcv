@@ -1,0 +1,504 @@
+<title>ผังเว็บคลินิกเด็กหมอจิรายุส</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Mitr:wght@400;500;600&family=IBM+Plex+Sans+Thai:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<style>
+/* Layout: เอกสารคอลัมน์เดียว อ่านบนมือถือ มีแถบหมวดเลื่อนข้างบน; ผังเว็บเป็น tree, mockup มือถือเรียงเลื่อนแนวนอน */
+:root{
+  --bg:#F5F9F8; --card:#FFFFFF; --fg:#14302D; --muted:#5A6F6B; --line:#D9E5E2;
+  --accent:#0C7F71; --accent-soft:#DDF1EC; --sun:#E9A023; --sun-soft:#FCEFD6; --rose:#D4566A;
+  --f-display:"Mitr","IBM Plex Sans Thai",system-ui,sans-serif;
+  --f-body:"IBM Plex Sans Thai","Noto Sans Thai",system-ui,sans-serif;
+  --f-mono:"IBM Plex Mono",ui-monospace,Menlo,monospace;
+}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
+  --bg:#0C1615; --card:#12201E; --fg:#E2EEEB; --muted:#93A8A4; --line:#24352F;
+  --accent:#3EC1AD; --accent-soft:#143A34; --sun:#F2B54B; --sun-soft:#3A2E14; --rose:#EE8394; color-scheme:dark}}
+:root[data-theme="dark"]{
+  --bg:#0C1615; --card:#12201E; --fg:#E2EEEB; --muted:#93A8A4; --line:#24352F;
+  --accent:#3EC1AD; --accent-soft:#143A34; --sun:#F2B54B; --sun-soft:#3A2E14; --rose:#EE8394; color-scheme:dark}
+*{box-sizing:border-box}
+body{background:var(--bg);color:var(--fg);font-family:var(--f-body);font-size:16px;line-height:1.7}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);z-index:10;background:var(--bg)}
+.wrap{max-width:940px;margin:0 auto;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));padding-block:8px 64px}
+h1,h2,h3{font-family:var(--f-display);font-weight:500;line-height:1.3;text-wrap:balance;margin:0}
+h1{font-size:clamp(28px,6vw,42px)}
+h2{font-size:clamp(22px,4.4vw,28px)}
+h3{font-size:18px}
+p{margin:0}
+.eyebrow{font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:var(--accent);font-weight:600}
+.muted{color:var(--muted)}
+.mono,code{font-family:var(--f-mono);font-size:.86em}
+code{background:var(--accent-soft);padding:1px 6px;border-radius:4px;color:var(--fg)}
+header.hero{display:grid;gap:14px;padding-block:28px 20px}
+.hero .lead{font-size:18px;max-width:62ch;color:var(--muted)}
+nav.toc{position:sticky;top:env(safe-area-inset-top,0px);z-index:5;background:var(--bg);border-bottom:1px solid var(--line);margin-inline:calc(-1 * max(16px,env(safe-area-inset-left,0px)));padding:10px max(16px,env(safe-area-inset-left,0px));overflow-x:auto;white-space:nowrap;display:flex;gap:6px;scrollbar-width:none}
+nav.toc a{font-size:14px;color:var(--fg);text-decoration:none;padding:5px 12px;border:1px solid var(--line);border-radius:999px;background:var(--card)}
+nav.toc a:hover,nav.toc a:focus-visible{border-color:var(--accent);color:var(--accent);outline:none}
+section{display:grid;gap:16px;padding-block:40px 8px;scroll-margin-top:60px}
+section>p,.prose{max-width:66ch}
+.grid{display:grid;gap:12px;grid-template-columns:repeat(auto-fit,minmax(min(100%,260px),1fr))}
+.box{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:16px;display:grid;gap:8px;align-content:start;min-width:0}
+.box h3{font-size:16.5px}
+.box ul{margin:0;padding-left:18px}
+.box li{margin:2px 0}
+.tag{display:inline-block;font-size:12px;padding:1px 8px;border-radius:999px;background:var(--accent-soft);color:var(--accent);font-weight:600;white-space:nowrap}
+.tag.sun{background:var(--sun-soft);color:var(--fg)}
+.tag.rose{background:transparent;border:1px solid var(--rose);color:var(--rose)}
+.callout{border-left:3px solid var(--sun);background:var(--sun-soft);padding:12px 16px;border-radius:0 10px 10px 0;max-width:72ch}
+.scroll{overflow-x:auto;-webkit-overflow-scrolling:touch}
+table{border-collapse:collapse;width:100%;font-size:14.5px;min-width:560px}
+th,td{text-align:left;padding:9px 10px;border-bottom:1px solid var(--line);vertical-align:top}
+th{font-weight:600;color:var(--muted);font-size:13px}
+td.num{font-variant-numeric:tabular-nums;white-space:nowrap}
+
+/* loop diagram */
+.loopwrap{display:grid;gap:20px;grid-template-columns:minmax(0,1fr);align-items:center}
+@media(min-width:760px){.loopwrap{grid-template-columns:380px minmax(0,1fr)}}
+.loopwrap svg{width:100%;max-width:380px;height:auto;margin:0 auto;display:block}
+.steps{display:grid;gap:10px;margin:0;padding:0;list-style:none;counter-reset:s}
+.steps li{display:grid;grid-template-columns:30px 1fr;gap:10px;align-items:start}
+.steps li::before{counter-increment:s;content:counter(s);width:28px;height:28px;border-radius:50%;background:var(--accent);color:var(--card);display:grid;place-items:center;font-weight:600;font-size:14px;font-family:var(--f-display)}
+
+/* sitemap tree */
+.tree{font-family:var(--f-mono);font-size:13.5px;line-height:1.85;background:var(--card);border:1px solid var(--line);border-radius:12px;padding:16px 18px;white-space:pre;min-width:max-content;color:var(--fg)}
+.tree b{color:var(--accent);font-weight:500}
+.tree i{font-style:normal;color:var(--muted);font-family:var(--f-body)}
+.tree .ni{color:var(--rose)}
+
+/* phones */
+.phones{display:flex;gap:18px;overflow-x:auto;padding:4px 2px 14px;scroll-snap-type:x mandatory}
+.phone{flex:0 0 268px;scroll-snap-align:start;background:var(--bg);border:8px solid var(--fg);border-radius:30px;overflow:hidden;display:flex;flex-direction:column;height:540px;font-size:13px;line-height:1.5}
+.phone .cap{text-align:center;font-size:12.5px;color:var(--muted);margin-top:6px}
+.ph-top{background:var(--accent);color:var(--card);padding:12px 14px 14px;display:grid;gap:4px}
+.ph-top .t{font-family:var(--f-display);font-size:15px}
+.ph-body{flex:1;padding:10px;display:grid;gap:8px;align-content:start;overflow:hidden}
+.ph-card{background:var(--card);border:1px solid var(--line);border-radius:10px;padding:9px 10px;display:grid;gap:4px}
+.ph-card .big{font-family:var(--f-display);font-size:15px}
+.ph-row{display:flex;justify-content:space-between;gap:8px;align-items:center}
+.ph-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:6px}
+.ph-grid div{background:var(--card);border:1px solid var(--line);border-radius:10px;padding:8px 4px;text-align:center;font-size:11.5px}
+.ph-grid div span{display:block;font-family:var(--f-display);font-size:16px;color:var(--accent)}
+.ph-btn{background:var(--sun);color:#2A1D05;border-radius:8px;padding:7px 10px;text-align:center;font-weight:600}
+.ph-nav{display:grid;grid-template-columns:repeat(5,1fr);border-top:1px solid var(--line);background:var(--card);font-size:10.5px;text-align:center;padding:6px 0 8px;color:var(--muted)}
+.ph-nav .on{color:var(--accent);font-weight:600}
+.ph-nav i{display:block;width:16px;height:16px;border-radius:5px;margin:0 auto 2px;background:currentColor;opacity:.35}
+.ph-nav .on i{opacity:1}
+.dot{width:9px;height:9px;border-radius:50%;display:inline-block;flex:0 0 auto}
+.dot.ok{background:var(--accent)} .dot.due{background:var(--sun)} .dot.late{background:var(--rose)}
+.bar{height:6px;border-radius:3px;background:var(--line);overflow:hidden}
+.bar>span{display:block;height:100%;background:var(--accent)}
+
+pre.json{font-family:var(--f-mono);font-size:12.8px;line-height:1.6;background:var(--card);border:1px solid var(--line);border-radius:12px;padding:14px 16px;margin:0;min-width:max-content;color:var(--fg)}
+pre.json .k{color:var(--accent)} pre.json .s{color:var(--muted)}
+
+.anatomy{display:grid;gap:6px;max-width:560px}
+.anatomy div{display:grid;grid-template-columns:30px 1fr;gap:10px;align-items:baseline;padding:8px 12px;background:var(--card);border:1px solid var(--line);border-radius:8px}
+.anatomy div b{font-family:var(--f-mono);color:var(--accent);font-weight:500;font-size:13px}
+.phase{display:grid;gap:12px;grid-template-columns:repeat(auto-fit,minmax(min(100%,200px),1fr))}
+.phase .box{border-top:3px solid var(--accent)}
+.phase .box:nth-child(2){border-top-color:var(--sun)}
+.phase .box:nth-child(3){border-top-color:var(--rose)}
+.phase .box:nth-child(4){border-top-color:var(--muted)}
+footer{margin-top:48px;padding-top:18px;border-top:1px solid var(--line);font-size:13.5px;color:var(--muted)}
+a{color:var(--accent)}
+@media (prefers-reduced-motion:no-preference){nav.toc a{transition:border-color .15s,color .15s}}
+</style>
+
+<div class="wrap">
+<header class="hero">
+  <span class="eyebrow">Site blueprint · v1 · พฤศจิกายน 2569</span>
+  <h1>ผังเว็บคลินิกเด็กหมอจิรายุส</h1>
+  <p class="lead">ผังเว็บไซต์แบบเน้นมือถือสำหรับพ่อแม่มือใหม่ ทุกเครื่องมือใช้ข้อมูลลูกชุดเดียวกัน แล้วพาไปสู่การนัดหมายที่คลินิก โครงลิงก์ภายในออกแบบให้ Google และ AI search (ChatGPT, Perplexity, Gemini, Claude) อ่านเข้าใจและอ้างอิงได้</p>
+</header>
+
+<nav class="toc" aria-label="สารบัญ">
+  <a href="#loop">Ecosystem</a><a href="#sitemap">ผังเว็บ</a><a href="#mobile">หน้าจอมือถือ</a><a href="#vaccine">วัคซีน</a><a href="#tools">เครื่องมือ</a><a href="#modules">ระบบโมดูล</a><a href="#articles">บทความ</a><a href="#links">โครงลิงก์</a><a href="#seo">SEO & AI</a><a href="#data">ข้อมูล</a><a href="#stack">เทคโนโลยี</a><a href="#roadmap">แผนทำ</a>
+</nav>
+
+<!-- 1. LOOP -->
+<section id="loop">
+  <span class="eyebrow">หัวใจของระบบ</span>
+  <h2>“โปรไฟล์ลูก” คือศูนย์กลาง ทุกเครื่องมือวนกลับมาที่คลินิก</h2>
+  <p>พ่อแม่กรอกวันเกิดลูกครั้งเดียว ทุกเครื่องมือดึงข้อมูลนี้ไปใช้ เช่น ตารางวัคซีน กราฟการเติบโต ประเมินพัฒนาการ และขนาดยาตามน้ำหนัก ระบบจะรู้ว่าลูก “ถึงเวลาอะไร” แล้วชวนกลับมาคลินิกในจังหวะที่พ่อแม่ต้องการพอดี</p>
+  <div class="loopwrap">
+    <svg viewBox="0 0 380 380" role="img" aria-label="วงจร ecosystem 6 ขั้น รอบโปรไฟล์ลูก">
+      <defs><marker id="ar" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="var(--accent)"/></marker></defs>
+      <circle cx="190" cy="190" r="128" fill="none" stroke="var(--line)" stroke-width="2" stroke-dasharray="4 6"/>
+      <path d="M 235.8 70.4 A 128 128 0 0 1 270.5 90.5" fill="none" stroke="var(--accent)" stroke-width="2" marker-end="url(#ar)"/>
+      <path d="M 316.4 170.0 A 128 128 0 0 1 316.4 210.0" fill="none" stroke="var(--accent)" stroke-width="2" marker-end="url(#ar)"/>
+      <path d="M 270.5 289.5 A 128 128 0 0 1 235.8 309.6" fill="none" stroke="var(--accent)" stroke-width="2" marker-end="url(#ar)"/>
+      <path d="M 144.2 309.6 A 128 128 0 0 1 109.5 289.5" fill="none" stroke="var(--accent)" stroke-width="2" marker-end="url(#ar)"/>
+      <path d="M 63.6 210.0 A 128 128 0 0 1 63.6 170.0" fill="none" stroke="var(--accent)" stroke-width="2" marker-end="url(#ar)"/>
+      <path d="M 109.5 90.5 A 128 128 0 0 1 144.2 70.4" fill="none" stroke="var(--accent)" stroke-width="2" marker-end="url(#ar)"/>
+      <circle cx="190" cy="190" r="62" fill="var(--accent)"/>
+      <text x="190" y="184" text-anchor="middle" font-family="Mitr, sans-serif" font-size="17" fill="var(--card)">โปรไฟล์ลูก</text>
+      <text x="190" y="206" text-anchor="middle" font-family="IBM Plex Sans Thai, sans-serif" font-size="10.5" fill="var(--card)">วันเกิด · น้ำหนัก · ประวัติ</text>
+      <g font-family="IBM Plex Sans Thai, sans-serif" font-size="12" fill="var(--fg)" text-anchor="middle">
+        <circle cx="190" cy="62" r="37" fill="var(--card)" stroke="var(--accent)" stroke-width="2"/><text x="190" y="58">ค้นเจอ</text><text x="190" y="74" font-size="9.5" fill="var(--muted)">Google/AI</text>
+        <circle cx="301" cy="126" r="37" fill="var(--card)" stroke="var(--accent)" stroke-width="2"/><text x="301" y="122">เครื่องมือ</text><text x="301" y="138" font-size="9.5" fill="var(--muted)">ใช้ฟรี</text>
+        <circle cx="301" cy="254" r="37" fill="var(--card)" stroke="var(--accent)" stroke-width="2"/><text x="301" y="250">บันทึกลูก</text><text x="301" y="266" font-size="9.5" fill="var(--muted)">LINE login</text>
+        <circle cx="190" cy="318" r="37" fill="var(--sun-soft)" stroke="var(--sun)" stroke-width="2"/><text x="190" y="314">แจ้งเตือน</text><text x="190" y="330" font-size="9.5" fill="var(--muted)">LINE OA</text>
+        <circle cx="79" cy="254" r="37" fill="var(--sun)" stroke="var(--sun)" stroke-width="2"/><text x="79" y="250" fill="#2A1D05">จองคิว</text><text x="79" y="266" font-size="9.5" fill="#2A1D05">มาคลินิก</text>
+        <circle cx="79" cy="126" r="37" fill="var(--card)" stroke="var(--accent)" stroke-width="2"/><text x="79" y="122">หมอบันทึก</text><text x="79" y="138" font-size="9.5" fill="var(--muted)">สมุดวัคซีน</text>
+      </g>
+    </svg>
+    <ol class="steps">
+      <li><div><b>ค้นเจอ</b> · พ่อแม่ค้น “ลูก 2 เดือนฉีดวัคซีนอะไร” แล้วเจอหน้าอายุ หรือ AI ตอบพร้อมอ้างอิงเว็บคลินิก</div></li>
+      <li><div><b>ใช้เครื่องมือฟรี</b> · คำนวณตารางวัคซีน หรือคำนวณขนาดยา ได้ทันทีโดยไม่ต้องสมัคร (ลดแรงต้าน)</div></li>
+      <li><div><b>บันทึกลูก</b> · ปุ่ม “เก็บผลไว้ แจ้งเตือนก่อนถึงนัด” ล็อกอินด้วย LINE ครั้งเดียว ไม่ต้องตั้งรหัสผ่าน</div></li>
+      <li><div><b>แจ้งเตือนตามจังหวะชีวิต</b> · วัคซีนครบกำหนด 7 วันและ 1 วันก่อนนัด, วัดตัวตามช่วงวัย, ประเมินพัฒนาการ 9/18/30/42/60 เดือน, วัคซีนไข้หวัดใหญ่ประจำปี</div></li>
+      <li><div><b>จองคิว</b> · ลิงก์ในข้อความ LINE เปิดหน้านัดที่กรอกชื่อลูกและวัคซีนให้แล้ว เหลือแค่เลือกเวลา</div></li>
+      <li><div><b>หมอบันทึกกลับ</b> · เจ้าหน้าที่ติ๊กว่าฉีดแล้ว สมุดวัคซีนดิจิทัลอัปเดต ระบบตั้งนัดถัดไปให้เอง แล้ววงจรเริ่มรอบใหม่</div></li>
+    </ol>
+  </div>
+  <div class="callout"><b>ทำไมแบบนี้ได้ผล</b> · ทุกเครื่องมือเป็นทั้งบริการให้พ่อแม่และช่องทางเก็บข้อมูลลูก ยิ่งพ่อแม่ใช้เครื่องมือมาก ระบบยิ่งรู้ว่าควรชวนกลับมาเมื่อไร ทุกการแจ้งเตือนจึงเกี่ยวกับลูกคนนั้นจริง ไม่ใช่โฆษณาทั่วไป</div>
+</section>
+
+<!-- 2. SITEMAP -->
+<section id="sitemap">
+  <span class="eyebrow">Information architecture</span>
+  <h2>ผังเว็บและโครง URL</h2>
+  <p>ใช้ URL ภาษาอังกฤษสั้น อ่านง่าย และไม่เปลี่ยนภายหลัง ส่วนชื่อหน้าและเนื้อหาเป็นภาษาไทย หน้าที่มีเครื่องหมาย <span class="tag rose">noindex</span> เป็นข้อมูลส่วนตัว ไม่ให้ search engine เก็บ</p>
+  <div class="scroll"><div class="tree"><b>/</b>                                 <i>หน้าแรก · โปรไฟล์ลูกถ้าล็อกอินแล้ว / ค้นหาตามอายุ</i>
+├─ <b>/clinic</b>                         <i>เกี่ยวกับคลินิก · เวลาทำการ · แผนที่ · ติดต่อ</i>
+│  ├─ /clinic/doctor                <i>ประวัติหมอจิรายุส (สร้าง E-E-A-T)</i>
+│  └─ /clinic/visit                 <i>การเดินทาง ที่จอดรถ สิ่งที่ต้องเตรียมมา</i>
+├─ <b>/services</b>                       <i>บริการทั้งหมด</i>
+│  └─ /services/[slug]              <i>ตรวจสุขภาพเด็กดี · ตรวจเด็กป่วย · วัคซีน · ประเมินพัฒนาการ · นมแม่</i>
+├─ <b>/vaccines</b>                       <i>ตารางวัคซีน + ราคา (หน้าเดียวจบ)</i>
+│  ├─ /vaccines/schedule            <i>ตารางวัคซีนพื้นฐานและเสริมตามอายุ</i>
+│  ├─ /vaccines/prices              <i>ตารางราคา (ลิงก์ไปแต่ละวัคซีน)</i>
+│  └─ /vaccines/[slug]              <i>pcv · rotavirus · influenza · hpv · dengue · ...</i>
+├─ <b>/age</b>                            <i>ศูนย์รวมตามช่วงวัย ★ จุดแข็ง SEO</i>
+│  └─ /age/[n]-months               <i>ลูก 2 เดือน: วัคซีน + พัฒนาการ + น้ำหนักปกติ + บทความ</i>
+├─ <b>/tools</b>                          <i>ศูนย์เครื่องมือ (มาจาก module registry)</i>
+│  ├─ /tools/vaccine-schedule       <i>คำนวณวันฉีดวัคซีน</i>
+│  ├─ /tools/growth                 <i>กราฟการเจริญเติบโต WHO</i>
+│  ├─ /tools/development            <i>ประเมินพัฒนาการตามวัย</i>
+│  ├─ /tools/pcv-catch-up           <i>โมดูล: คำนวณเข็ม PCV ตามอายุที่เริ่ม</i>
+│  └─ /tools/paracetamol-dose       <i>โมดูล: ขนาดยาลดไข้ตามน้ำหนัก</i>
+├─ <b>/articles</b>                       <i>คลังบทความ</i>
+│  ├─ /articles/[category]          <i>หน้าหมวด (pillar page)</i>
+│  └─ /articles/[category]/[slug]   <i>บทความ</i>
+├─ <b>/booking</b>                        <i>จองนัด (รับ ?child=&vaccine= ได้)</i>
+├─ <b>/faq</b>                            <i>คำถามที่พบบ่อยรวม</i>
+└─ <span class="ni">/my</span>                            <span class="ni">noindex</span> <i>ลูกของฉัน · สมุดวัคซีน · นัดหมาย · ผลประเมิน</i>
+   ├─ /my/children/[id]
+   └─ /my/appointments</div></div>
+  <div class="callout"><b>หน้า <code>/age/[n]-months</code> สำคัญที่สุดในเชิง SEO</b> · พ่อแม่มือใหม่คิดตามอายุลูก ไม่ได้คิดตามชื่อวัคซีน หน้าเดียวตอบได้ครบว่าเดือนนี้ฉีดอะไร ควรทำอะไรได้ น้ำหนักเท่าไรจึงปกติ และควรระวังอะไร ทำไว้ 0, 1, 2, 4, 6, 9, 12, 15, 18, 24, 30, 36, 48, 60 เดือน รวม 14 หน้า</div>
+</section>
+
+<!-- 3. MOBILE -->
+<section id="mobile">
+  <span class="eyebrow">Mobile UX</span>
+  <h2>หน้าจอหลักบนมือถือ</h2>
+  <p>แถบล่าง 5 ปุ่มใช้นิ้วโป้งกดได้: <b>หน้าแรก · วัคซีน · เครื่องมือ · บทความ · นัดหมาย</b> ทุกหน้ามีปุ่มลอย “โทร / LINE / จอง” ทำเป็น PWA ให้กด “เพิ่มไปหน้าจอหลัก” ได้เหมือนแอป · <span class="muted">ข้อมูลในหน้าจอเป็นตัวอย่าง</span></p>
+  <div class="phones">
+    <div>
+      <div class="phone">
+        <div class="ph-top"><span style="font-size:11px;opacity:.85">สวัสดีคุณแม่น้องข้าวหอม</span><span class="t">น้องข้าวหอม · 3 เดือน 20 วัน</span></div>
+        <div class="ph-body">
+          <div class="ph-card" style="border-color:var(--sun);background:var(--sun-soft)">
+            <span class="tag sun" style="justify-self:start">อีก 10 วัน</span>
+            <span class="big">วัคซีนช่วง 4 เดือน</span>
+            <span class="muted">คอตีบ-บาดทะยัก-ไอกรน-ตับอักเสบบี-Hib, โปลิโอ, โรต้า, PCV</span>
+            <div class="ph-btn">จองคิว 24 พ.ย.</div>
+          </div>
+          <div class="ph-grid"><div><span>5.9</span>กก.</div><div><span>61</span>ซม.</div><div><span>8/9</span>พัฒนาการ</div></div>
+          <div class="ph-card"><b>เครื่องมือ</b><div class="ph-row"><span>ตารางวัคซีน</span><span>›</span></div><div class="ph-row"><span>ขนาดยาลดไข้</span><span>›</span></div><div class="ph-row"><span>กราฟการเติบโต</span><span>›</span></div></div>
+          <div class="ph-card"><span class="muted" style="font-size:11px">อ่านสำหรับวัย 4 เดือน</span><b>ลูกพลิกคว่ำได้เมื่อไร</b></div>
+        </div>
+        <div class="ph-nav"><span class="on"><i></i>หน้าแรก</span><span><i></i>วัคซีน</span><span><i></i>เครื่องมือ</span><span><i></i>บทความ</span><span><i></i>นัด</span></div>
+      </div>
+      <p class="cap">หน้าแรก (ล็อกอินแล้ว)</p>
+    </div>
+    <div>
+      <div class="phone">
+        <div class="ph-top"><span style="font-size:11px;opacity:.85">เครื่องมือ › ตารางวัคซีน</span><span class="t">ตารางวัคซีนของลูก</span></div>
+        <div class="ph-body">
+          <div class="ph-card"><span class="muted" style="font-size:11px">วันเกิด</span><b>25 ก.ค. 2569</b></div>
+          <div class="ph-card"><div class="ph-row"><span><span class="dot ok"></span> แรกเกิด</span><span class="muted">ฉีดแล้ว</span></div><span class="muted" style="font-size:11.5px">BCG, ตับอักเสบบี 1</span></div>
+          <div class="ph-card"><div class="ph-row"><span><span class="dot ok"></span> 2 เดือน</span><span class="muted">ฉีดแล้ว</span></div><span class="muted" style="font-size:11.5px">DTP-HB-Hib 1, OPV 1, Rota 1, PCV 1</span></div>
+          <div class="ph-card" style="border-color:var(--sun)"><div class="ph-row"><span><span class="dot due"></span> <b>4 เดือน</b></span><b>25 พ.ย. 69</b></div><span class="muted" style="font-size:11.5px">DTP-HB-Hib 2, OPV 2, IPV, Rota 2, PCV 2</span><span style="font-size:11.5px">ราคาวัคซีนเสริม ›</span></div>
+          <div class="ph-card"><div class="ph-row"><span><span class="dot" style="background:var(--line)"></span> 6 เดือน</span><span class="muted">25 ม.ค. 70</span></div></div>
+          <div class="ph-btn">บันทึก + แจ้งเตือนทาง LINE</div>
+        </div>
+        <div class="ph-nav"><span><i></i>หน้าแรก</span><span><i></i>วัคซีน</span><span class="on"><i></i>เครื่องมือ</span><span><i></i>บทความ</span><span><i></i>นัด</span></div>
+      </div>
+      <p class="cap">ผลคำนวณวัคซีน → บันทึก/จอง</p>
+    </div>
+    <div>
+      <div class="phone">
+        <div class="ph-top"><span style="font-size:11px;opacity:.85">เครื่องมือ › ยาลดไข้</span><span class="t">ขนาดยาพาราเซตามอล</span></div>
+        <div class="ph-body">
+          <div class="ph-card"><span class="muted" style="font-size:11px">น้ำหนักลูก (ดึงจากโปรไฟล์)</span><b>5.9 กก.</b></div>
+          <div class="ph-card"><span class="muted" style="font-size:11px">ยาที่มีที่บ้าน</span><b>น้ำเชื่อม 120 มก./5 มล.</b></div>
+          <div class="ph-card" style="background:var(--accent-soft);border-color:var(--accent)"><span class="muted" style="font-size:11px">ครั้งละ</span><span class="big">2.5 – 3.5 มล.</span><span class="muted" style="font-size:11.5px">ห่างกันอย่างน้อย 4–6 ชม. ไม่เกิน 5 ครั้ง/วัน</span></div>
+          <div class="ph-card" style="border-color:var(--rose)"><b style="color:var(--rose)">ควรพบแพทย์ทันทีถ้า</b><span style="font-size:11.5px">อายุน้อยกว่า 3 เดือนและมีไข้, ซึม, หายใจเร็ว, ชัก</span></div>
+          <div class="ph-btn">ปรึกษาหมอ / จองคิว</div>
+        </div>
+        <div class="ph-nav"><span><i></i>หน้าแรก</span><span><i></i>วัคซีน</span><span class="on"><i></i>เครื่องมือ</span><span><i></i>บทความ</span><span><i></i>นัด</span></div>
+      </div>
+      <p class="cap">โมดูลคำนวณยา</p>
+    </div>
+    <div>
+      <div class="phone">
+        <div class="ph-top"><span style="font-size:11px;opacity:.85">นัดหมาย</span><span class="t">จองคิว</span></div>
+        <div class="ph-body">
+          <div class="ph-card"><span class="muted" style="font-size:11px">ลูก</span><b>น้องข้าวหอม</b></div>
+          <div class="ph-card"><span class="muted" style="font-size:11px">บริการ (เลือกให้แล้ว)</span><b>วัคซีน 4 เดือน + PCV 2</b></div>
+          <div class="ph-card"><span class="muted" style="font-size:11px">วันที่</span>
+            <div class="ph-row" style="gap:4px"><span class="tag">จ 24</span><span class="tag sun">อ 25</span><span class="tag">พ 26</span><span class="tag">พฤ 27</span></div></div>
+          <div class="ph-card"><span class="muted" style="font-size:11px">เวลาว่าง</span>
+            <div class="ph-row" style="gap:4px;flex-wrap:wrap"><span class="tag">17:00</span><span class="tag sun">17:30</span><span class="tag">18:00</span><span class="tag">18:30</span></div></div>
+          <div class="ph-btn">ยืนยันนัด → ส่งเข้า LINE</div>
+          <span class="muted" style="font-size:11px;text-align:center">เตือนก่อน 1 วัน · เลื่อนนัดได้ในแชต</span>
+        </div>
+        <div class="ph-nav"><span><i></i>หน้าแรก</span><span><i></i>วัคซีน</span><span><i></i>เครื่องมือ</span><span><i></i>บทความ</span><span class="on"><i></i>นัด</span></div>
+      </div>
+      <p class="cap">จองนัด (กรอกให้ล่วงหน้า)</p>
+    </div>
+  </div>
+</section>
+
+<!-- 4. VACCINE -->
+<section id="vaccine">
+  <span class="eyebrow">คลินิก · วัคซีน · ราคา</span>
+  <h2>ข้อมูลคลินิก ตารางวัคซีน และราคา</h2>
+  <div class="grid">
+    <div class="box"><h3>/clinic ข้อมูลคลินิก</h3><ul>
+      <li>ชื่อ ที่อยู่ เบอร์โทร ต้องสะกดตรงกับ Google Business Profile ทุกตัวอักษร (NAP)</li>
+      <li>เวลาทำการแบบตาราง และป้าย “เปิดอยู่ตอนนี้” คำนวณสด</li>
+      <li>ปุ่มเปิด Google Maps, ปุ่ม LINE OA, ปุ่มโทร (แสดงเบอร์เป็นตัวหนังสือด้วย)</li>
+      <li>วันหยุดพิเศษดึงจากระบบนัด เว็บกับ LINE จึงแสดงตรงกัน</li></ul></div>
+    <div class="box"><h3>/vaccines/[slug] หน้าวัคซีน</h3><ul>
+      <li>ย่อหน้าแรกตอบสั้น: ป้องกันโรคอะไร ฉีดกี่เข็ม อายุเท่าไร ราคาเท่าไร</li>
+      <li>ตารางเข็ม · ผลข้างเคียง · ข้อห้าม · FAQ</li>
+      <li>ฝังเครื่องมือที่เกี่ยวข้อง เช่น PCV catch-up ฝังในหน้า PCV</li>
+      <li>ปุ่ม “จองวัคซีนนี้” ส่งต่อไปที่ <code>/booking?vaccine=pcv</code></li></ul></div>
+    <div class="box"><h3>ตัวคำนวณวัคซีนเบื้องต้น</h3><ul>
+      <li>รับวันเกิด (และวัคซีนที่เคยฉีด ถ้ามี) แล้วคำนวณวันครบกำหนดของแต่ละเข็ม</li>
+      <li>แยกสี: ฉีดแล้ว / ถึงกำหนด / เลยกำหนด / อนาคต</li>
+      <li>แยก <span class="tag">วัคซีนพื้นฐาน (ฟรี)</span> กับ <span class="tag sun">วัคซีนเสริม (มีค่าใช้จ่าย)</span> พร้อมลิงก์ราคา</li>
+      <li>เข็มที่เลยกำหนดให้ขึ้นข้อความ “ปรึกษาหมอเรื่องฉีดตามทัน” แทนการคำนวณเอง</li></ul></div>
+  </div>
+  <h3 style="margin-top:8px">โครงตารางราคา <span class="muted" style="font-size:14px;font-weight:400">(ช่องราคาให้คลินิกกรอกเองในระบบหลังบ้าน)</span></h3>
+  <div class="scroll"><table>
+    <thead><tr><th>วัคซีน</th><th>ป้องกัน</th><th>จำนวนเข็ม</th><th>ช่วงอายุ</th><th>ราคา/เข็ม</th><th>ลิงก์</th></tr></thead>
+    <tbody>
+      <tr><td>PCV (นิวโมคอคคัส)</td><td>ปอดอักเสบ เยื่อหุ้มสมองอักเสบ หูน้ำหนวก</td><td>3–4</td><td>2 เดือนขึ้นไป</td><td class="num">฿ —</td><td><code>/vaccines/pcv</code></td></tr>
+      <tr><td>โรต้า</td><td>ท้องร่วงรุนแรง</td><td>2–3 (กิน)</td><td>2–8 เดือน</td><td class="num">฿ —</td><td><code>/vaccines/rotavirus</code></td></tr>
+      <tr><td>ไข้หวัดใหญ่</td><td>ไข้หวัดใหญ่ตามฤดูกาล</td><td>1–2/ปี</td><td>6 เดือนขึ้นไป</td><td class="num">฿ —</td><td><code>/vaccines/influenza</code></td></tr>
+      <tr><td>อีสุกอีใส</td><td>อีสุกอีใส</td><td>2</td><td>12 เดือนขึ้นไป</td><td class="num">฿ —</td><td><code>/vaccines/varicella</code></td></tr>
+      <tr><td>ตับอักเสบเอ</td><td>ตับอักเสบเอ</td><td>1–2</td><td>12 เดือนขึ้นไป</td><td class="num">฿ —</td><td><code>/vaccines/hepatitis-a</code></td></tr>
+    </tbody></table></div>
+  <p class="muted" style="font-size:14px">ข้อมูลวัคซีนทั้งหมดเก็บเป็น “ข้อมูลกลาง” ที่เดียว ทั้งตารางราคา หน้าวัคซีน ตัวคำนวณ และหน้าอายุดึงจากชุดเดียวกัน ราคาจึงไม่มีทางแสดงไม่ตรงกัน ตารางเข็มต้องให้หมอทบทวนตามคำแนะนำล่าสุดของสมาคมโรคติดเชื้อในเด็กแห่งประเทศไทยปีละครั้ง</p>
+</section>
+
+<!-- 5. TOOLS -->
+<section id="tools">
+  <span class="eyebrow">เครื่องมือหลัก</span>
+  <h2>การเจริญเติบโต และพัฒนาการ</h2>
+  <div class="grid">
+    <div class="box"><h3>/tools/growth กราฟการเติบโต</h3><ul>
+      <li>กรอกน้ำหนัก ส่วนสูง เส้นรอบศีรษะ แล้วคำนวณ percentile / z-score ตาม WHO Child Growth Standards (0–5 ปี)</li>
+      <li>แสดงเป็นกราฟเส้น ให้จุดของลูกวางบนเส้น P3–P97</li>
+      <li>สรุปผลเป็นภาษาคน เช่น “อยู่ในเกณฑ์ปกติ (P45)”</li>
+      <li>ถ้าค่าหลุดเกณฑ์ ไม่วินิจฉัยเอง ให้ขึ้นปุ่ม “นัดตรวจกับหมอ” แทน</li>
+      <li>บันทึกน้ำหนักล่าสุดลงโปรไฟล์ เพื่อให้โมดูลคำนวณยาใช้ต่อได้</li></ul></div>
+    <div class="box"><h3>/tools/development ประเมินพัฒนาการ</h3><ul>
+      <li>เช็กลิสต์ตามวัย 4 ด้าน: กล้ามเนื้อมัดใหญ่ · มัดเล็ก · ภาษา · สังคม</li>
+      <li>อ้างอิงช่วงวัยของ DSPM (คู่มือเฝ้าระวังพัฒนาการเด็กปฐมวัยของไทย)</li>
+      <li>ข้อที่ยังทำไม่ได้มีคลิปหรือวิธีฝึกลูกที่บ้าน ลิงก์ไปบทความ</li>
+      <li>ระบบเตือนให้กลับมาประเมินครั้งต่อไปตามช่วงวัย</li>
+      <li>ข้อแจ้ง: เป็นการคัดกรองเบื้องต้น ไม่ใช่การวินิจฉัย</li></ul></div>
+    <div class="box"><h3>/booking ระบบนัดหมาย</h3><ul>
+      <li>ช่องเวลาและบริการตั้งค่าได้จากหลังบ้าน (วัคซีนใช้เวลา 15 นาที ตรวจพัฒนาการใช้ 30 นาที)</li>
+      <li>รับพารามิเตอร์จากทุกหน้า ฟอร์มจึงกรอกไว้ให้แล้ว</li>
+      <li>ยืนยันและเตือนนัดผ่าน LINE OA ไม่ต้องใช้ SMS</li>
+      <li>หน้าคิววันนี้สำหรับเจ้าหน้าที่ กด “มาแล้ว / ฉีดแล้ว” แล้วสมุดวัคซีนอัปเดตทันที</li></ul></div>
+  </div>
+</section>
+
+<!-- 6. MODULES -->
+<section id="modules">
+  <span class="eyebrow">Plug-in architecture</span>
+  <h2>ระบบโมดูล: เพิ่มเครื่องมือใหม่ได้โดยไม่แตะโครงเว็บ</h2>
+  <p>โมดูลหนึ่งตัวคือโฟลเดอร์ที่มี <code>manifest.json</code> + คอมโพเนนต์คำนวณ + เนื้อหาอธิบาย ระบบจะอ่าน manifest แล้วสร้างหน้า <code>/tools/[slug]</code> ใส่ในเมนูเครื่องมือ ใส่ structured data และลิงก์ไปหน้าวัคซีน/บทความ/อายุที่เกี่ยวข้องให้อัตโนมัติ</p>
+  <div class="grid" style="grid-template-columns:repeat(auto-fit,minmax(min(100%,340px),1fr))">
+    <div class="scroll"><pre class="json">modules/pcv-catch-up/manifest.json
+{
+  <span class="k">"id"</span>: "pcv-catch-up",
+  <span class="k">"title"</span>: "คำนวณจำนวนเข็มวัคซีน PCV ตามอายุ",
+  <span class="k">"category"</span>: "vaccine",
+  <span class="k">"version"</span>: "1.0.0",
+  <span class="k">"inputs"</span>: ["child.dob", "child.vaccines.pcv"],
+  <span class="k">"related"</span>: {
+    "vaccines": ["pcv"],
+    "ages": ["2-months","4-months","12-months"],
+    "articles": ["vaccine/pcv-guide"]
+  },
+  <span class="k">"cta"</span>: { "booking": "?vaccine=pcv" },
+  <span class="k">"reviewedBy"</span>: "dr-jirayus",
+  <span class="k">"lastReviewed"</span>: "2026-11-01",
+  <span class="k">"references"</span>: ["PIDST 2026", "WHO PCV position"],
+  <span class="k">"enabled"</span>: true
+}</pre></div>
+    <div class="scroll"><pre class="json">modules/paracetamol-dose/manifest.json
+{
+  <span class="k">"id"</span>: "paracetamol-dose",
+  <span class="k">"title"</span>: "คำนวณขนาดยาพาราเซตามอลสำหรับเด็ก",
+  <span class="k">"category"</span>: "medicine",
+  <span class="k">"inputs"</span>: ["child.weight", "child.dob"],
+  <span class="k">"config"</span>: {
+    "mgPerKg": [10, 15],
+    "minIntervalHr": 4,
+    "maxDosesPerDay": 5,
+    "products": ["120mg/5ml","160mg/5ml","250mg/5ml"]
+  },
+  <span class="k">"safety"</span>: {
+    "blockIfAgeMonthsUnder": 3,
+    "redFlags": ["ซึม","หายใจเร็ว","ชัก"]
+  },
+  <span class="k">"related"</span>: { "articles": ["illness/fever"] },
+  <span class="k">"enabled"</span>: true
+}</pre></div>
+  </div>
+  <h3>ทุกหน้าโมดูลใช้แม่แบบเดียวกัน</h3>
+  <div class="anatomy">
+    <div><b>1</b><span>H1 เป็นคำถาม + คำตอบสั้น 2–3 บรรทัด (แสดงผลจากฝั่ง server ไม่ต้องรอ JavaScript)</span></div>
+    <div><b>2</b><span>ตัวเครื่องมือ ดึงข้อมูลลูกจากโปรไฟล์ถ้ามี</span></div>
+    <div><b>3</b><span>ผลลัพธ์ + ปุ่ม “บันทึกและแจ้งเตือน” + ปุ่ม “จองคิว”</span></div>
+    <div><b>4</b><span>“คำนวณอย่างไร”: สูตร ตารางอ้างอิง แหล่งข้อมูล</span></div>
+    <div><b>5</b><span>ข้อควรระวังและอาการที่ต้องพบแพทย์</span></div>
+    <div><b>6</b><span>FAQ 3–5 ข้อ</span></div>
+    <div><b>7</b><span>ตรวจทานโดย นพ.จิรายุส · วันที่ทบทวนล่าสุด</span></div>
+    <div><b>8</b><span>ลิงก์ที่เกี่ยวข้อง: วัคซีน · ช่วงอายุ · บทความ · โมดูลอื่น</span></div>
+  </div>
+  <p class="muted" style="font-size:14.5px">โมดูลที่ควรทำต่อ: ไอบูโพรเฟน · ยาน้ำเกลือแร่ (ORS) ตามน้ำหนัก · ปริมาณนมต่อวัน · ไข้หวัดใหญ่ 1 หรือ 2 เข็ม · ตัวเหลืองทารก (ข้อมูลประกอบ) · ฉีดวัคซีนตามทัน (catch-up) แบบรวม</p>
+</section>
+
+<!-- 7. ARTICLES -->
+<section id="articles">
+  <span class="eyebrow">Content system</span>
+  <h2>ระบบบทความ: หมวด + แท็ก + ช่วงอายุ</h2>
+  <p>แต่ละบทความมี 3 แกน: <b>หมวดหลัก 1 หมวด</b> (กำหนด URL), <b>แท็กหลายแท็ก</b> และ <b>ช่วงอายุ</b> (ใช้ดึงไปแสดงในหน้า <code>/age</code> และหน้าแรกของคนที่ล็อกอิน)</p>
+  <div class="grid" style="grid-template-columns:repeat(auto-fit,minmax(min(100%,200px),1fr))">
+    <div class="box"><span class="tag">vaccine</span><b>วัคซีน</b><span class="muted">ตารางฉีด ผลข้างเคียง ฉีดตามทัน</span></div>
+    <div class="box"><span class="tag">growth</span><b>การเจริญเติบโต</b><span class="muted">น้ำหนัก ส่วนสูง ตัวเตี้ย</span></div>
+    <div class="box"><span class="tag">development</span><b>พัฒนาการ</b><span class="muted">พูดช้า กระตุ้นพัฒนาการ</span></div>
+    <div class="box"><span class="tag">nutrition</span><b>นมแม่และอาหาร</b><span class="muted">นมแม่ อาหารตามวัย แพ้นมวัว</span></div>
+    <div class="box"><span class="tag">illness</span><b>เจ็บป่วยบ่อย</b><span class="muted">ไข้ ไอ ท้องเสีย RSV มือเท้าปาก</span></div>
+    <div class="box"><span class="tag">medicine</span><b>ยาและการใช้ยา</b><span class="muted">ยาลดไข้ ยาสามัญประจำบ้าน</span></div>
+    <div class="box"><span class="tag">newborn</span><b>ทารกแรกเกิด</b><span class="muted">ตัวเหลือง สะดือ อาบน้ำ</span></div>
+    <div class="box"><span class="tag">sleep-safety</span><b>การนอนและความปลอดภัย</b><span class="muted">นอนอย่างปลอดภัย คาร์ซีท</span></div>
+  </div>
+  <p>หน้าหมวด <code>/articles/[category]</code> เขียนเป็น <b>pillar page</b>: บทความภาพรวมยาวที่ลิงก์ไปบทความย่อยทุกเรื่องในหมวด บทความย่อยทุกเรื่องลิงก์กลับมาที่ pillar รูปแบบนี้เรียกว่า topic cluster ทำให้ Google เห็นว่าคลินิกมีความเชี่ยวชาญครอบคลุมทั้งหัวข้อ</p>
+</section>
+
+<!-- 8. LINKS -->
+<section id="links">
+  <span class="eyebrow">Internal linking</span>
+  <h2>กฎการลิงก์ระหว่างหน้า</h2>
+  <p>ระบบสร้างลิงก์เหล่านี้ให้อัตโนมัติจากข้อมูลกลาง (vaccine, age, category, module) ผู้เขียนไม่ต้องจำ และไม่มีหน้าไหนถูกปล่อยไว้โดยไม่มีลิงก์เข้า</p>
+  <div class="scroll"><table>
+    <thead><tr><th>จากหน้า</th><th>ต้องลิงก์ไปยัง</th><th>เหตุผล</th></tr></thead>
+    <tbody>
+      <tr><td><b>บทความ</b></td><td>pillar ของหมวด · หน้าอายุ 1–2 หน้า · เครื่องมือ 1 ตัว · บริการ 1 อย่าง</td><td>ส่งพลัง SEO ไปหน้าที่ทำเงิน และพาคนอ่านไปใช้เครื่องมือ</td></tr>
+      <tr><td><b>หน้าวัคซีน</b></td><td>โรคที่ป้องกัน (บทความ) · หน้าอายุที่ฉีด · โมดูลคำนวณ · ราคา · จอง</td><td>ตอบครบในหน้าเดียว AI จึงอ้างอิงได้ง่าย</td></tr>
+      <tr><td><b>หน้าอายุ</b></td><td>วัคซีนของวัยนั้น · เช็กลิสต์พัฒนาการ · กราฟการเติบโต · บทความที่แท็กวัยนั้น · อายุก่อนหน้าและถัดไป</td><td>เป็นแกนกลางที่เชื่อมทุกอย่างตามเส้นเวลา</td></tr>
+      <tr><td><b>เครื่องมือ</b></td><td>บทความอธิบายผล · วัคซีนหรือบริการที่เกี่ยวข้อง · จองแบบกรอกข้อมูลไว้แล้ว</td><td>เปลี่ยนคนที่ใช้เครื่องมือให้เป็นคนไข้</td></tr>
+      <tr><td><b>บริการ</b></td><td>ราคา · หมอ · บทความที่เกี่ยวข้อง · จอง · แผนที่</td><td>หน้าที่ปิดการขาย</td></tr>
+      <tr><td><b>ทุกหน้า</b></td><td>breadcrumb · footer ที่มี NAP + เวลาทำการ</td><td>ให้ Google จับคู่หน้ากับคลินิก (local SEO)</td></tr>
+    </tbody></table></div>
+</section>
+
+<!-- 9. SEO -->
+<section id="seo">
+  <span class="eyebrow">SEO + AI search (GEO)</span>
+  <h2>ทำให้ Google และ AI หาเจอ และอ้างอิงคลินิก</h2>
+  <div class="grid">
+    <div class="box"><h3>Structured data (JSON-LD)</h3><ul>
+      <li><code>MedicalClinic</code> + <code>Physician</code>: ที่อยู่ พิกัด เวลาทำการ <code>sameAs</code> ไป Google Maps, Facebook, LINE</li>
+      <li><code>MedicalWebPage</code> + <code>reviewedBy</code> + <code>lastReviewed</code> ในบทความทุกหน้า</li>
+      <li><code>Article</code> · <code>BreadcrumbList</code> · <code>FAQPage</code></li>
+      <li><code>WebApplication</code> สำหรับหน้าเครื่องมือ</li>
+      <li><code>Offer</code> + <code>priceCurrency: THB</code> ในหน้าวัคซีน</li></ul></div>
+    <div class="box"><h3>เขียนให้ AI ดึงไปตอบได้</h3><ul>
+      <li>ประโยคแรกของทุกหน้าตอบคำถามตรงๆ ภายใน 40–60 คำ</li>
+      <li>หัวข้อ H2 ตั้งเป็นคำถามที่พ่อแม่พิมพ์ค้นจริง</li>
+      <li>ข้อมูลตัวเลขใส่เป็นตาราง HTML จริง ไม่ทำเป็นรูปภาพ</li>
+      <li>ระบุผู้เขียน ผู้ตรวจทาน วันที่อัปเดต และแหล่งอ้างอิงทุกหน้า</li>
+      <li>หน้าเครื่องมือมีคำอธิบายวิธีคำนวณเป็นข้อความ AI จึงเข้าใจได้แม้ไม่รัน JavaScript</li></ul></div>
+    <div class="box"><h3>Technical</h3><ul>
+      <li>แสดงผลจาก server (SSR/SSG) และ <code>lang="th"</code></li>
+      <li><code>sitemap.xml</code> แยกตามประเภทหน้า · <code>/llms.txt</code> สรุปคลินิกและลิงก์หลัก</li>
+      <li>robots.txt อนุญาต Googlebot, Bingbot, GPTBot, OAI-SearchBot, PerplexityBot, ClaudeBot</li>
+      <li><code>/my</code>, <code>/booking</code> confirm ตั้ง <code>noindex</code></li>
+      <li>Core Web Vitals บนมือถือ: LCP &lt; 2.5 วินาที, รูป WebP, ฟอนต์ไทยแบบ subset</li></ul></div>
+    <div class="box"><h3>Local SEO</h3><ul>
+      <li>Google Business Profile: หมวดหมู่ “กุมารแพทย์” ใส่บริการและราคาให้ตรงกับเว็บ</li>
+      <li>หลังฉีดวัคซีน ส่งข้อความ LINE ขอรีวิว Google</li>
+      <li>หน้า <code>/clinic</code> ใส่ชื่อย่าน/เขต เช่น “คลินิกเด็กใกล้ …”</li>
+      <li>ลงทะเบียน Apple Maps และ Bing Places ด้วย</li></ul></div>
+  </div>
+  <div class="callout"><b>เรื่องความน่าเชื่อถือทางการแพทย์ (YMYL)</b> · Google และ AI ให้น้ำหนักกับเนื้อหาสุขภาพที่ “ระบุตัวหมอจริง” มาก หน้า <code>/clinic/doctor</code> ควรมีเลข ว. วุฒิบัตร สถาบันที่จบ และลิงก์ไปแพทยสภา ทุกบทความลิงก์กลับมาที่หน้านี้ผ่าน <code>reviewedBy</code></div>
+</section>
+
+<!-- 10. DATA -->
+<section id="data">
+  <span class="eyebrow">Data model</span>
+  <h2>โครงข้อมูลหลัก</h2>
+  <div class="scroll"><table>
+    <thead><tr><th>ตาราง</th><th>ฟิลด์สำคัญ</th><th>ใช้ที่</th></tr></thead>
+    <tbody>
+      <tr><td><b>Parent</b></td><td>line_user_id, ชื่อ, เบอร์, consent_pdpa_at</td><td>ล็อกอิน แจ้งเตือน</td></tr>
+      <tr><td><b>Child</b></td><td>parent_id, ชื่อเล่น, วันเกิด, เพศ, น้ำหนักล่าสุด</td><td>ทุกเครื่องมือ</td></tr>
+      <tr><td><b>VaccineDose</b></td><td>child_id, vaccine_id, เข็มที่, วันที่ฉีด, ที่ไหน, ยืนยันโดยคลินิก?</td><td>สมุดวัคซีน ตัวคำนวณ</td></tr>
+      <tr><td><b>GrowthRecord</b></td><td>child_id, วันที่, น้ำหนัก, ส่วนสูง, รอบศีรษะ</td><td>กราฟ ขนาดยา</td></tr>
+      <tr><td><b>DevAssessment</b></td><td>child_id, ช่วงวัย, คำตอบรายข้อ, ผล</td><td>พัฒนาการ การเตือน</td></tr>
+      <tr><td><b>Appointment</b></td><td>child_id, service_id, เวลา, สถานะ, items[]</td><td>จอง คิว</td></tr>
+      <tr><td><b>Reminder</b></td><td>child_id, ชนิด, due_at, ส่งแล้ว?, คลิก?, จองแล้ว?</td><td>LINE OA วัดผล</td></tr>
+      <tr><td><b>Vaccine / Service / Price</b></td><td>slug, ชื่อ, ตารางเข็ม, ราคา, related</td><td>ข้อมูลกลาง</td></tr>
+      <tr><td><b>Article / Category / Tag</b></td><td>slug, หมวด, แท็ก[], ช่วงอายุ[], reviewed_by, last_reviewed</td><td>บทความ ลิงก์อัตโนมัติ</td></tr>
+      <tr><td><b>Module</b></td><td>id, manifest, enabled, version</td><td>ระบบโมดูล</td></tr>
+    </tbody></table></div>
+  <div class="callout"><b>PDPA</b> · ข้อมูลสุขภาพเด็กเป็นข้อมูลอ่อนไหวตาม พ.ร.บ.คุ้มครองข้อมูลส่วนบุคคล ต้องขอความยินยอมแบบชัดแจ้งก่อนบันทึก เครื่องมือทุกตัวใช้ได้โดยไม่ต้องบันทึก (คำนวณในเครื่องผู้ใช้) และมีปุ่มลบข้อมูลลูกทั้งหมดใน <code>/my</code></div>
+</section>
+
+<!-- 11. STACK -->
+<section id="stack">
+  <span class="eyebrow">Tech stack ที่แนะนำ</span>
+  <h2>เทคโนโลยี</h2>
+  <div class="grid">
+    <div class="box"><h3>หน้าเว็บ</h3><p><b>Next.js</b> (App Router) แบบ static สำหรับหน้าเนื้อหา และ server สำหรับ <code>/my</code> ติดตั้งเป็น PWA ได้ Deploy บน Vercel หรือ Cloudflare</p></div>
+    <div class="box"><h3>เนื้อหา</h3><p>บทความเป็น <b>MDX ใน Git</b> หรือใช้ headless CMS (เช่น Sanity) ถ้าทีมไม่ได้เขียนโค้ด ข้อมูลวัคซีนและราคาเก็บเป็นข้อมูลแบบมีโครงสร้าง ไม่เขียนลงในข้อความ</p></div>
+    <div class="box"><h3>ผู้ใช้และนัดหมาย</h3><p><b>Supabase</b> (Postgres + Auth + Row Level Security) ล็อกอินผ่าน <b>LINE Login / LIFF</b> เปิดในแอป LINE ได้เลย</p></div>
+    <div class="box"><h3>แจ้งเตือน</h3><p><b>LINE Messaging API</b> + งานตั้งเวลารายวันที่หา Reminder ที่ครบกำหนด แล้วส่ง Flex Message ที่มีปุ่มจองคิว</p></div>
+  </div>
+</section>
+
+<!-- 12. ROADMAP -->
+<section id="roadmap">
+  <span class="eyebrow">ลำดับการสร้าง</span>
+  <h2>แผนทำเป็น 4 ระยะ</h2>
+  <div class="phase">
+    <div class="box"><span class="tag">ระยะ 1 · 4–6 สัปดาห์</span><b>หาเจอและน่าเชื่อถือ</b><ul><li>/clinic, /clinic/doctor</li><li>/vaccines + ราคา</li><li>ตัวคำนวณวัคซีน (ไม่ต้องล็อกอิน)</li><li>โมดูล PCV + พาราเซตามอล</li><li>บทความ 20 เรื่อง + หน้าอายุ 14 หน้า</li><li>schema, sitemap, llms.txt</li></ul></div>
+    <div class="box"><span class="tag sun">ระยะ 2</span><b>ดึงกลับมา</b><ul><li>LINE Login + โปรไฟล์ลูก</li><li>สมุดวัคซีนดิจิทัล</li><li>จองนัด + เตือนผ่าน LINE OA</li><li>หน้าคิวสำหรับเจ้าหน้าที่</li></ul></div>
+    <div class="box"><span class="tag rose">ระยะ 3</span><b>ใช้ทุกเดือน</b><ul><li>กราฟการเติบโต</li><li>ประเมินพัฒนาการ</li><li>โมดูลยาและนมเพิ่ม</li><li>เตือนตามช่วงวัย</li></ul></div>
+    <div class="box"><span class="tag">ระยะ 4</span><b>ขยาย</b><ul><li>แพ็กเกจวัคซีน/สมาชิก</li><li>ส่งออกสมุดวัคซีน PDF</li><li>ปรึกษาออนไลน์</li><li>แดชบอร์ดวัดผล</li></ul></div>
+  </div>
+  <h3>ตัวชี้วัดที่ควรดู</h3>
+  <div class="scroll"><table>
+    <thead><tr><th>ขั้น</th><th>ตัวชี้วัด</th><th>เป้าเริ่มต้น</th></tr></thead>
+    <tbody>
+      <tr><td>ค้นเจอ</td><td>ผู้เข้าชมจาก organic + AI referral / เดือน</td><td>ดูแนวโน้มเดือนต่อเดือน</td></tr>
+      <tr><td>ใช้เครื่องมือ → บันทึก</td><td>% คนคำนวณแล้วสร้างโปรไฟล์ลูก</td><td class="num">≥ 15%</td></tr>
+      <tr><td>แจ้งเตือน → จอง</td><td>% reminder ที่นำไปสู่การจอง</td><td class="num">≥ 30%</td></tr>
+      <tr><td>กลับมาซ้ำ</td><td>% เด็กที่มาฉีดครบตามนัดถัดไปที่คลินิก</td><td class="num">≥ 70%</td></tr>
+    </tbody></table></div>
+</section>
+
+<footer>เอกสารออกแบบ v1 · ข้อมูลในหน้าจอตัวอย่าง ชื่อเด็ก วันที่ และราคา เป็นตัวอย่างประกอบ · ตารางวัคซีนและขนาดยาต้องให้แพทย์ตรวจทานก่อนเปิดใช้งานจริง</footer>
+</div>
